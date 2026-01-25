@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultoria em Saúde</title>
+    <title>Consultoria em Saúde Intestinal</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -17,7 +17,6 @@
             --white: #ffffff;
         }
 
-        /* Reset Geral */
         * {
             margin: 0;
             padding: 0;
@@ -40,9 +39,16 @@
         }
 
         header h1 {
+            margin-bottom: 2.2rem;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+        }
+
+       header h3 {
             margin-bottom: 1.5rem;
             color: var(--primary-color);
-            font-size: 2.2rem;
+            font-size: 1.5rem;
             letter-spacing: -1px;
         }
 
@@ -70,9 +76,7 @@
             flex-wrap: wrap;
         }
 
-        nav ul li {
-            position: relative;
-        }
+        nav ul li { position: relative; }
 
         nav ul li a {
             display: block;
@@ -85,9 +89,7 @@
             text-align: center;
         }
 
-        nav ul li a:hover {
-            background-color: var(--dark-green);
-        }
+        nav ul li a:hover { background-color: var(--dark-green); }
 
         /* SUBMENU */
         .submenu {
@@ -101,30 +103,17 @@
             border-radius: 0 0 8px 8px;
         }
 
-        .submenu li {
-            width: 100%;
-        }
-
         .submenu li a {
             padding: 12px 20px;
             font-size: 0.85rem;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .submenu li a:hover {
-            background-color: var(--hover-green);
-            padding-left: 30px;
-        }
+        .submenu li a:hover { background-color: var(--hover-green); padding-left: 30px; }
 
-        nav ul li:hover .submenu {
-            display: block;
-        }
+        nav ul li:hover .submenu { display: block; }
 
-        /* LINK DE RETORNO UNIFORME E SEM DIVISÓRIA */
-        .link-retorno {
-            background-color: transparent; 
-            border-left: none; /* Removida a divisória */
-        }
+        .link-retorno { background-color: transparent; }
 
         /* HERO SECTION */
         .hero {
@@ -133,31 +122,30 @@
             background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 6rem 20px;
+            padding: 5rem 20px;
             text-align: center;
         }
 
         .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; opacity: 0.9; }
 
         /* CONTEÚDO */
         .container {
             max-width: 1100px;
-            margin: 4rem auto;
+            margin: 3rem auto;
             padding: 0 20px;
         }
 
         .section-title {
             text-align: center;
             color: var(--primary-color);
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             font-size: 2rem;
         }
 
         .post-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .post-card {
@@ -165,19 +153,37 @@
             border-radius: 12px;
             padding: 2rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
             border: 1px solid #edf2f7;
         }
 
-        .post-card:hover { transform: translateY(-10px); }
-
-        .btn-read {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            margin-top: 1rem;
+        /* CHECKLIST DISBIOSE */
+        .checklist-section {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-top: 4rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 2px solid var(--primary-color);
         }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: var(--bg-color);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .check-item input { margin-right: 10px; accent-color: var(--primary-color); }
 
         /* WHATSAPP */
         .whatsapp-btn {
@@ -192,24 +198,21 @@
             font-weight: bold;
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
             z-index: 2000;
-            transition: 0.3s;
         }
 
         footer {
             text-align: center;
-            padding: 4rem 20px;
+            padding: 3rem 20px;
             background: #1a202c;
             color: var(--white);
             margin-top: 4rem;
         }
 
-        /* RESPONSIVIDADE PARA CELULAR */
         @media (max-width: 768px) {
             nav ul { flex-direction: column; }
-            .submenu { position: static; width: 100%; box-shadow: none; }
-            header h1 { font-size: 1.8rem; }
-            .hero h2 { font-size: 1.6rem; }
-            nav ul li a { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+            .submenu { position: static; width: 100%; }
+            .checklist-grid { grid-template-columns: 1fr; }
+            .hero h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -217,12 +220,13 @@
 
     <header>
         <h1>Consultoria em Saúde</h1>
-        <h2>Qualidade de Vida & Bem-Estar</h2>
+        <h3>Qualidade de Vida & Bem-Estar</h3>
+        <br>
         <nav>
             <div class="nav-container">
                 <ul>
                     <li>
-                        <a href="#">Inicial ▼</a>
+                        <a href="consultoria_saúde.html">Inicial ▼</a>
                         <ul class="submenu">
                             <li><a href="#">Sobre a Consultoria</a></li>
                             <li><a href="#">Nossa Missão</a></li>
@@ -232,8 +236,7 @@
                         <a href="#">Saúde & Prevenção ▼</a>
                         <ul class="submenu">
                             <li><a href="#">Equilíbrio Intestinal</a></li>
-                            <li><a href="#">Fortalecimento Imunológico</a></li>
-                            <li><a href="#">Dicas de Alimentação</a></li>
+                            <li><a href="#">Imunidade</a></li>
                         </ul>
                     </li>
                     <li>
@@ -243,57 +246,66 @@
                             <li><a href="#">Probiótika</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">Produtos ▼</a>
-                        <ul class="submenu">
-                            <li><a href="#">Leite Fermentado</a></li>
-                        </ul>
-                    </li>
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScCJkOa0QlutNgcOVEzs8AOae3GZgcc326oSMJJMwySWy6Vug/viewform?usp=header" target="_blank">Contato</a></li>
-                    <li class="link-retorno">
-                        <a href="https://acaj81.github.io/matriz/">Voltar para Matriz</a>
-                    </li>
+                    <li class="link-retorno"><a href="https://acaj81.github.io/matriz/">Voltar para Matriz</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
+    <main class="container">
+        <section class="hero" style="border-radius: 15px; margin-bottom: 3rem;">
             <h2>Ciência para uma vida saudável</h2>
             <p>Consultoria especializada em microbiota e longevidade.</p>
         </section>
 
-        <div class="container">
-            <h2 class="section-title">Conhecimento que Transforma</h2>
-            <div class="post-grid">
-                <article class="post-card">
-                    <h3>O que é Disbiose?</h3>
-                    <p>Entenda como o desequilíbrio das bactérias afeta seu humor e sua disposição diária.</p>
-                    <a href="#" class="btn-read">Ler artigo completo →</a>
-                </article>
-                
-                <article class="post-card">
-                    <h3>O Segundo Cérebro</h3>
-                    <p>A conexão entre o intestino e a mente: por que as emoções afetam sua digestão.</p>
-                    <a href="#" class="btn-read">Ler artigo completo →</a>
-                </article>
-                
-                <article class="post-card">
-                    <h3>Imunidade de Ferro</h3>
-                    <p>Descubra as melhores cepas de probióticos para fortalecer suas defesas naturais.</p>
-                    <a href="#" class="btn-read">Ler artigo completo →</a>
-                </article>
-            </div>
+        <h2 class="section-title">Conhecimento que Transforma</h2>
+        <div class="post-grid">
+            <article class="post-card">
+                <h3>O que é Disbiose?</h3>
+                <p>O desequilíbrio bacteriano que afeta sua disposição diária.</p>
+                <a href="#" style="color:var(--accent-color); font-weight:700; text-decoration:none; display:block; margin-top:10px;">Ler mais →</a>
+            </article>
+            <article class="post-card">
+                <h3>O Segundo Cérebro</h3>
+                <p>A conexão vital entre seu intestino e suas emoções.</p>
+                <a href="#" style="color:var(--accent-color); font-weight:700; text-decoration:none; display:block; margin-top:10px;">Ler mais →</a>
+            </article>
+            <article class="post-card">
+                <h3>Imunidade</h3>
+                <p>Como os probióticos reforçam suas defesas naturais.</p>
+                <a href="#" style="color:var(--accent-color); font-weight:700; text-decoration:none; display:block; margin-top:10px;">Ler mais →</a>
+            </article>
         </div>
+
+        <section class="checklist-section">
+            <h2 style="color: var(--primary-color); text-align: center;">🔍 Teste de Sinais de Disbiose</h2>
+            <p style="text-align: center; font-size: 0.9rem; color: #666;">Marque o que você sente com frequência:</p>
+            
+            <div class="checklist-grid">
+                <label class="check-item"><input type="checkbox"> Estufamento abdominal</label>
+                <label class="check-item"><input type="checkbox"> Gases em excesso</label>
+                <label class="check-item"><input type="checkbox"> Intestino irregular</label>
+                <label class="check-item"><input type="checkbox"> Fadiga constante</label>
+                <label class="check-item"><input type="checkbox"> Dificuldade de foco</label>
+                <label class="check-item"><input type="checkbox"> Queda de cabelo</label>
+                <label class="check-item"><input type="checkbox"> Desejo por doces</label>
+                <label class="check-item"><input type="checkbox"> Imunidade baixa</label>
+            </div>
+
+            <div style="margin-top: 2rem; text-align: center; padding: 15px; background: #f0fdfa; border-radius: 8px; border: 1px dashed var(--primary-color);">
+                <p style="font-weight: bold; color: var(--dark-green);">Resultado:</p>
+                <p style="font-size: 0.85rem;">Se marcou 3 ou mais itens, sua microbiota pode precisar de atenção especializada.</p>
+                <a href="https://wa.me/5511950640669" style="color: var(--accent-color); font-weight: bold; text-decoration: none; display: block; margin-top: 10px;">Falar com Especialista →</a>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Consultoria Saúde em Harmonia</p>
-        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">Especialista em Microbiota Humana</p>
+        <p>&copy; 2026 Consultoria - Saúde em Harmonia</p>
     </footer>
 
-    <a href="https://wa.me/5511950640669" class="whatsapp-btn" target="_blank">Falar com Consultor 📱</a>
+    <a href="https://wa.me/5511950640669" class="whatsapp-btn" target="_blank">Consultor 📱</a>
 
 </body>
 </html>
