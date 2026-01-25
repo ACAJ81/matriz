@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriz | O Futuro já Começou!</title>
+    <style>
+      /* Reset básico para evitar espaços em branco indesejados */
+      * { margin: 0; padding: 0; box-sizing: border-box;}
+   
+      /* Estilos Gerais */
+      body { background-color: #f0f0f0; font-family: Cambria, sans-serif; margin: 20px; }
+      h1 { color: navy; text-align: center; }
+      h2 {color: navy; font-weight: bold}
+      p { color: black; font-size: 20px;}
+      b { color: #4B0082; font-family: 'Cambria'; font-size: 23px;}
+      u {font-family: 'Cambria'; font-size: 20px; font-weight: bold;}
+
+    /* Barra de Navegação */
+    .navbar { background-color: #1a1a1a; display: flex; justify-content: center; padding: 20px; position: sticky; top: 0; z-index: 1000;} 
+
+    /* Lista Principal */
+    .nav-links {list-style: none; display: flex; }
+
+    /* Itens da Lista */ 
+    .nav-item { position: relative; }
+    
+    .nav-item a { color: white; text-decoration: none; padding: 20px 25px; display: block; text-transform: uppercase; font: size 20px; letter-spacing: 1px; }
+
+    .nav-item a:hover { background-color: #333; color: #daa520; }
+
+    /* Menu Suspenso */ 
+    .dropdown { display: none; position: absolute; background-color: #222; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); top: 100%; left: 0; }
+ 
+    .dropdown a { padding: 12px 20px; text-transform: none; border-bottom: 1px solid #333;}
+      
+    /* Mostrar o submenu ao passar o mouse */
+    .nav-item:hover .dropdown { display: block;}
+
+     /* Conteúdo da Página */
+     .main-content { max-width: 900px; margin: 50px auto; padding: 20px; line-height: 1.8; color: #333;}
+
+     .convite-comentario {
+    display: flex;
+    align-items: center;
+    background-color: #fdfbf7;
+    border: 1px solid #daa520;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 40px 0;
+    gap: 20px;
+}
+
+.icone-balao {
+    font-size: 2rem;
+}
+
+.texto-convite h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+}
+
+.texto-convite p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.botao-comentar {
+    text-decoration: none;
+    background-color: #1a1a1a;
+    color: #daa520;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    white-space: nowrap; /* Impede que o texto do botão quebre */
+    transition: 0.3s;
+}
+
+.botao-comentar:hover {
+    background-color: #daa520;
+    color: white;
+}
+
+/* Responsividade: em celulares o botão fica embaixo */
+@media (max-width: 600px) {
+    .convite-comentario {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+ </style>
+  </head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="http://localhost/">Home ▼</a>
+        <div class="dropdown">
+        <a href="sobre.html">Sobre</a>
+        <a href="missão.html">Missão</a>
+        <a href="visão.html">Visão</a>
+        <a href="valores.html">Valores</a>  
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="o consolador.html">O Consolador ▼</a>  
+        <div class="dropdown">
+        <a href="sobre a bíblia.html">Sobre a Bíblia</a>
+        <a href="antigo testamento.html">Antigo Testamento</a>
+        <a href="#">Novo Testamento</a>
+        <a href="#">Dicionário Bíblico</a>
+        <a href="#">Mapas Bíblicos</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="#">&&&&& ▼</a>
+                <div class="dropdown">
+                    <a href="#">&&&&&</a>
+                    <a href="#">&&&&&</a> 
+                    <a href="#">&&&&&</a>
+                    <a href="#">&&&&&</a> 
+                </div>
+            </li>
+
+            <li class="nav-item"><a href="#">&&&&& ▼</a></li>
+            <li class="nav-item"><a href="#">&&&&& ▼</a></li>
+      
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <div class="header-exegese">
+        <a href="../genesis.html" class="voltar">← Voltar para Gênesis</a>
+        <span class="referencia">Gênesis 1:28</span>
+        <br>
+        <br>
+        <h1>Estudo aprofundado sobre o versículo 28 do capítulo 1 do livro de Gênesis</h1>
+        <br>
+    </div>
+<hr>
+    <article class="artigo-aprofundamento">
+        <section class="bloco-estudo">
+            <br>
+            <h3>A Benção de Deus após a Criação do Homem</h3>
+            <br>
+            <p>Neste versículo, logo após a criação do homem, Deus abençoou-o como uma concessão de poder, dando-lhe capacidade para realizar suas ordens.</p>
+            <br>
+            <p>No termo: Frutificai e multiplicai-vos, tendo Deus reunido toda sua criação até a criação do homem, quando o versículo anterior diz: macho e fêmea os criou, Deus deu uma ordem transcendental, ou seja, sua voz não foi ouvida só pelo homem, mas foi ouvida por toda sua criação, mostrando ao homem que sua imegem e semelhança é vida em abundância.</p>
+            <br>
+            <p>O domínio dado ao homem por Deus, foi uma autoridade digna de sua preservação e preservação das criações que ele havia criado.</p>
+            <br>
+            <p>Portanto, o homem foi criado para viver em comunhão com Deus e com toda a criação, sendo responsável por zelar e cuidar de tudo que Deus criou.</p>
+            <br>
+        </section>  
+    </article>
+    <hr>
+    <div class="convite-comentario">
+    <div class="icone-balao">💬</div>
+    <div class="texto-convite">
+        <h3>Gostaria de comentar ou acrescentar algo?</h3>
+        <p>Sua análise é fundamental para a nossa Matriz.</p>
+    </div>
+    <a href="../projeto_matriz/comentarios.php" class="botao-comentar">Ir para Comentários</a>
+</div>
+    </main>
+<br>
+<hr><u><p>Direitos Autorais Pertencentes à Empresa ACAJ - Sociedade Limitada Unipessoal - Inscrita no CNPJ: 54.574.507/0001-88</p></u>
+</body>
+</html>

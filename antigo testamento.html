@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriz | O Futuro já Começou!</title>
+    <style>
+      /* Reset básico para evitar espaços em branco indesejados */
+      * { margin: 0; padding: 0; box-sizing: border-box;}
+   
+      /* Estilos Gerais */
+      body { background-color: #f0f0f0; font-family: Cambria, sans-serif; margin: 20px; }
+      h1 { color: navy; text-align: center; }
+      h2 {color: navy; font-weight: bold}
+      p { color: black; font-size: 20px;}
+      b { color: #4B0082; font-family: 'Cambria'; font-size: 23px;}
+      u {font-family: 'Cambria'; font-size: 20px; font-weight: bold;}
+
+      /* Estilo do Cabeçalho */
+.header-testamento {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.header-testamento h1 {
+    font-size: 3rem;
+    color: #1a1a1a;
+}
+
+.resumo {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Grupos de Livros */
+.grupo-livros {
+    margin-bottom: 50px;
+}
+
+.categoria-titulo {
+    border-bottom: 2px solid #daa520;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+}
+
+.categoria-titulo h2 {
+    margin: 0;
+    font-family: 'Georgia', serif;
+}
+
+.descricao {
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* Grid de Livros */
+.grid-livros {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.livro-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.livro-card:hover {
+    background-color: #1a1a1a;
+    color: #daa520;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.livro-card strong {
+    display: block;
+}
+
+.livro-card p {
+    font-size: 0.75rem;
+    margin: 5px 0 0 0;
+    color: inherit;
+    opacity: 0.8;
+}
+
+.destaque-menor {
+    border: 1px dashed #daa520;
+}
+
+/* Garante que o link ocupe o espaço do card e não tenha sublinhado */
+a.livro-card {
+    text-decoration: none; /* Remove o sublinhado azul padrão */
+    color: #1a1a1a;        /* Mantém a cor do texto escura */
+    display: block;        /* Faz o link se comportar como um bloco preenchido */
+}
+
+/* Ajuste no Hover para links */
+a.livro-card:hover {
+    background-color: #1a1a1a;
+    color: #daa520;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Garante que o texto dentro do card não mude de cor sozinho */
+.livro-card strong, .livro-card p {
+    color: inherit; 
+}
+
+    /* Barra de Navegação */
+    .navbar { background-color: #1a1a1a; display: flex; justify-content: center; padding: 20px; position: sticky; top: 0; z-index: 1000;} 
+
+    /* Lista Principal */
+    .nav-links {list-style: none; display: flex; }
+
+    /* Itens da Lista */ 
+    .nav-item { position: relative; }
+    
+    .nav-item a { color: white; text-decoration: none; padding: 20px 25px; display: block; text-transform: uppercase; font: size 20px; letter-spacing: 1px; }
+
+    .nav-item a:hover { background-color: #333; color: #daa520; }
+
+    /* Menu Suspenso */ 
+    .dropdown { display: none; position: absolute; background-color: #222; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); top: 100%; left: 0; }
+ 
+    .dropdown a { padding: 12px 20px; text-transform: none; border-bottom: 1px solid #333;}
+      
+    /* Mostrar o submenu ao passar o mouse */
+    .nav-item:hover .dropdown { display: block;}
+
+     /* Conteúdo da Página */
+     .main-content { max-width: 900px; margin: 50px auto; padding: 20px; line-height: 1.8; color: #333;}
+
+ </style>
+  </head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="http://localhost/">Home ▼</a>
+        <div class="dropdown">
+        <a href="sobre.html">Sobre</a>
+        <a href="missão.html">Missão</a>
+        <a href="visão.html">Visão</a>
+        <a href="valores.html">Valores</a>  
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="o consolador.html">O Consolador ▼</a>  
+        <div class="dropdown">
+        <a href="sobre a bíblia.html">Sobre a Bíblia</a>
+        <a href="antigo testamento.html">Antigo Testamento</a>
+        <a href="#">Novo Testamento</a>
+        <a href="#">Dicionário Bíblico</a>
+        <a href="#">Mapas Bíblicos</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="#">&&&&& ▼</a>
+                <div class="dropdown">
+                    <a href="#">&&&&&</a>
+                    <a href="#">&&&&&</a> 
+                    <a href="#">&&&&&</a>
+                    <a href="#">&&&&&</a> 
+                </div>
+            </li>
+
+            <li class="nav-item"><a href="#">&&&&& ▼</a></li>
+            <li class="nav-item"><a href="#">&&&&& ▼</a></li>
+      
+    </ul>
+  </nav>
+
+<main class="main-content">
+    <header class="header-testamento">
+        <h1>O Antigo Testamento</h1>
+        <p class="resumo">A fundação da revelação divina, abrangendo desde as origens do cosmos até a preparação para o Messias.</p>
+    </header>
+
+    <section class="grupo-livros">
+        <div class="categoria-titulo">
+            <h2>I. O Pentateuco (A Lei)</h2>
+            <span class="descricao">Os cinco livros de Moisés que estabelecem a base da fé e da lei.</span>
+        </div>
+   <div class="grid-livros">
+    <a href="genesis.html" class="livro-card">
+        <strong>Gênesis</strong>
+        <p>Origens e Patriarcas</p>
+    </a>
+    <a href="exodo.html" class="livro-card">
+        <strong>Êxodo</strong>
+        <p>Saída e Aliança</p>
+    </a>
+    <a href="levitico.html" class="livro-card">
+        <strong>Levítico</strong>
+        <p>Leis e Santidade</p>
+    </a>
+    <a href="numeros.html" class="livro-card">
+        <strong>Números</strong>
+        <p>Censo e Peregrinação</p>
+    </a>
+    <a href="deuteronomio.html" class="livro-card">
+        <strong>Deuteronômio</strong>
+        <p>Repetição da Lei</p>
+    </a>
+</div>
+    </section>
+
+    <section class="grupo-livros">
+        <div class="categoria-titulo">
+            <h2>II. Livros Históricos</h2>
+            <span class="descricao">A trajetória de Israel: da conquista da terra prometida ao exílio.</span>
+        </div>
+        <div class="grid-livros">
+            <div class="livro-card"><strong>Josué</strong></div>
+            <div class="livro-card"><strong>Juízes</strong></div>
+            <div class="livro-card"><strong>Rute</strong></div>
+            <div class="livro-card"><strong>1 e 2 Samuel</strong></div>
+            <div class="livro-card"><strong>1 e 2 Reis</strong></div>
+            <div class="livro-card"><strong>1 e 2 Crônicas</strong></div>
+            <div class="livro-card"><strong>Esdras</strong></div>
+            <div class="livro-card"><strong>Neemias</strong></div>
+            <div class="livro-card"><strong>Ester</strong></div>
+        </div>
+    </section>
+
+    <section class="grupo-livros">
+        <div class="categoria-titulo">
+            <h2>III. Livros Poéticos e de Sabedoria</h2>
+            <span class="descricao">A expressão da alma humana e a busca pela sabedoria divina.</span>
+        </div>
+        <div class="grid-livros">
+            <div class="livro-card"><strong>Jó</strong></div>
+            <div class="livro-card"><strong>Salmos</strong></div>
+            <div class="livro-card"><strong>Provérbios</strong></div>
+            <div class="livro-card"><strong>Eclesiastes</strong></div>
+            <div class="livro-card"><strong>Cânticos</strong></div>
+        </div>
+    </section>
+
+    <section class="grupo-livros">
+        <div class="categoria-titulo">
+            <h2>IV. Livros Proféticos</h2>
+            <span class="descricao">Mensagens de juízo, esperança e promessas messiânicas.</span>
+        </div>
+        <p class="nota-interna">Divididos em Profetas Maiores e Menores (pela extensão do texto).</p>
+        <div class="grid-livros">
+            <div class="livro-card"><strong>Isaías</strong></div>
+            <div class="livro-card"><strong>Jeremias</strong></div>
+            <div class="livro-card"><strong>Lamentações</strong></div>
+            <div class="livro-card"><strong>Ezequiel</strong></div>
+            <div class="livro-card"><strong>Daniel</strong></div>
+            <div class="livro-card destaque-menor"><strong>12 Profetas Menores</strong></div>
+        </div>
+    </section>
+</main>
+
+    </main>
+<br>
+<hr><u><p>Direitos Autorais Pertencentes à Empresa ACAJ - Sociedade Limitada Unipessoal - Inscrita no CNPJ: 54.574.507/0001-88</p></u>
+</body>
+</html>

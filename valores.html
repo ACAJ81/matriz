@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <style>
+   
+      /* Estilos Gerais */
+      body { background-color: #f0f0f0; font-family: Cambria, sans-serif; margin: 20px; }
+      h1 { color: navy; text-align: center; }
+      h2 {color: navy; font-weight: bold}
+      p { color: black; font-size: 20px;}
+      b { color: #4B0082; font-family: 'Cambria'; font-size: 23px;}
+      u {font-family: 'Cambria'; font-size: 20px; font-weight: bold;}
+
+       /* Barra de Navegação */
+    .navbar { background-color: #1a1a1a; display: flex; justify-content: center; padding: 20px; position: sticky; top: 0; z-index: 1000;} 
+
+    /* Lista Principal */
+    .nav-links {list-style: none; display: flex; }
+
+    /* Itens da Lista */ 
+    .nav-item { position: relative; }
+    
+    .nav-item a { color: white; text-decoration: none; padding: 20px 25px; display: block; text-transform: uppercase; font: size 20px; letter-spacing: 1px; }
+
+    .nav-item a:hover { background-color: #333; color: #daa520; }
+
+    /* Menu Suspenso */ 
+    .dropdown { display: none; position: absolute; background-color: #222; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); top: 100%; left: 0; }
+ 
+    .dropdown a { padding: 12px 20px; text-transform: none; border-bottom: 1px solid #333;}
+      
+    /* Mostrar o submenu ao passar o mouse */
+    .nav-item:hover .dropdown { display: block;}
+
+     /* Conteúdo da Página */
+     .main-content { max-width: 900px; margin: 50px auto; padding: 20px; line-height: 1.8; color: #333;}
+
+      /* Margem */
+      .conteudo-pagina {max-width: 1000px; margin: 0 auto; padding: 0 40px; }  
+
+  </style>
+</head>
+
+  <body>
+     <nav class="navbar">
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="http://localhost/">Home</a>    
+        <div class="dropdown">
+        <a href="sobre.html">Sobre</a>
+        <a href="missão.html">Missão</a>
+        <a href="visão.html">Visão</a>
+        <a href="valores.html">Valores</a>
+        </div>
+      </li>
+
+     <li class="nav-item">
+        <a href="o consolador.html">O Consolador ▼</a>  
+        <div class="dropdown">
+        <a href="sobre a bíblia.html">Sobre a Bíblia</a>
+        <a href="antigo testamento.html">Antigo Testamento</a>
+        <a href="#">Novo Testamento</a>
+        <a href="#">Dicionário Bíblico</a>
+        <a href="#">Mapas Bíblicos</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="#">Ciências ▼</a>
+                <div class="dropdown">
+                    <a href="#">Física</a>
+                    <a href="#">Biologia</a>
+                    <a href="#">Astronomia</a>
+                    <a href="#">Arqueologia</a>
+                </div>
+            </li>
+
+            <li class="nav-item"><a href="#">Filosofia ▼</a></li>
+            <li class="nav-item"><a href="#">Sobre ▼</a></li>
+      
+    </ul>
+  </nav>
+
+    <br>
+
+    <main class="conteudo-pagina">
+    <h1>Valores</h1>
+    <br>
+    <p><b>1.</b> <u>Compromisso com o Impacto Social</u>: A Matriz atua com propósito, aperfeiçoando a geração de transformações na vida das pessoas por meio da <u>tecnologia inovadora</u>.</p>
+
+    <p><b>2.</b> <u>Ética e Transparência</u>: A Matriz mantém uma conduta íntegra em todas as relações, promovendo a confiança à uma sociedade justa.</p>
+
+    <p><b>3.</b> <u>Inovação Contínua</u>: A Matriz está em constante evolução, antecipando tendências e oferecendo soluções criativas e eficazes.</p>
+
+    <p><b>4.</b> <u>Excelência Técnica</u>: A Matriz valoriza o rigor, a qualidade e a competência em tudo o que entrega.</p>
+
+    <p><b>5.</b> <u>Colaboração e Diálogo</u>: A Matriz age com fé sob a força da escuta ativa e da construção conjunta com governos, empresas e população.</p>
+
+    <p><b>6.</b> <u>Visão Estratégica</u>: A Matriz tem seu foco no presente, conectando dados, pessoas e políticas públicas para decidir com inteligência.</p
+
+  </main>
+
+  </body>
+</html>

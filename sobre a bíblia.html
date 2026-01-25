@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriz | O Futuro já Começou!</title>
+    <style>
+      /* Reset básico para evitar espaços em branco indesejados */
+      * { margin: 0; padding: 0; box-sizing: border-box;}
+   
+      /* Estilos Gerais */
+      body { background-color: #f0f0f0; font-family: Cambria, sans-serif; margin: 20px; }
+      h1 { color: navy; text-align: center; }
+      h2 {color: navy; font-weight: bold}
+      p { color: black; font-size: 20px;}
+      b { color: #4B0082; font-family: 'Cambria'; font-size: 23px;}
+      u {font-family: 'Cambria'; font-size: 20px; font-weight: bold;}
+
+      .introducao {
+    font-size: 1.3rem;
+    color: #555;
+    border-left: 4px solid #daa520;
+    padding-left: 20px;
+    margin: 30px 0;
+}
+
+.cards-funcao {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.card strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #b8860b;
+}
+
+    /* Barra de Navegação */
+    .navbar { background-color: #1a1a1a; display: flex; justify-content: center; padding: 20px; position: sticky; top: 0; z-index: 1000;} 
+
+    /* Lista Principal */
+    .nav-links {list-style: none; display: flex; }
+
+    /* Itens da Lista */ 
+    .nav-item { position: relative; }
+    
+    .nav-item a { color: white; text-decoration: none; padding: 20px 25px; display: block; text-transform: uppercase; font: size 20px; letter-spacing: 1px; }
+
+    .nav-item a:hover { background-color: #333; color: #daa520; }
+
+    /* Menu Suspenso */ 
+    .dropdown { display: none; position: absolute; background-color: #222; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); top: 100%; left: 0; }
+ 
+    .dropdown a { padding: 12px 20px; text-transform: none; border-bottom: 1px solid #333;}
+      
+    /* Mostrar o submenu ao passar o mouse */
+    .nav-item:hover .dropdown { display: block;}
+
+     /* Conteúdo da Página */
+     .main-content { max-width: 900px; margin: 50px auto; padding: 20px; line-height: 1.8; color: #333;}
+
+ </style>
+  </head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="http://localhost/">Home ▼</a>
+        <div class="dropdown">
+        <a href="sobre.html">Sobre</a>
+        <a href="missão.html">Missão</a>
+        <a href="visão.html">Visão</a>
+        <a href="valores.html">Valores</a>  
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="o consolador.html">O Consolador ▼</a>  
+        <div class="dropdown">
+        <a href="sobre a bíblia.html">Sobre a Bíblia</a>
+        <a href="antigo testamento.html">Antigo Testamento</a>
+        <a href="#">Novo Testamento</a>
+        <a href="#">Dicionário Bíblico</a>
+        <a href="#">Mapas Bíblicos</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="#">&&&&& ▼</a>
+                <div class="dropdown">
+                    <a href="#">&&&&&</a>
+                    <a href="#">&&&&&</a> 
+                    <a href="#">&&&&&</a>
+                    <a href="#">&&&&&</a> 
+                </div>
+            </li>
+
+            <li class="nav-item"><a href="#">&&&&& ▼</a></li>
+            <li class="nav-item"><a href="#">&&&&& ▼</a></li>
+      
+    </ul>
+  </nav>
+
+<main class="main-content">
+    <article class="estudo-biblico">
+        <header>
+            <br>
+            <h1>O Que é a Bíblia Sagrada?</h1>
+            <br>
+            <p class="introducao">
+                Muito mais que um livro religioso, a Bíblia é uma biblioteca divina que registra o diálogo de Deus com a humanidade através dos séculos.
+            </p>
+        </header>
+
+        <section class="definicao">
+            <h2>1. Definição e Composição</h2>
+            <br>
+            <p>
+                A Bíblia é composta por <strong>66 livros</strong> divididos em duas grandes partes:
+            </p>
+            <br>
+            <ul>
+                <li><strong>Antigo Testamento (39 livros):</strong> Escrito majoritariamente em hebraico, narra a criação e a história de Israel antes de Cristo.</li>
+                <br>
+                <li><strong>Novo Testamento (27 livros):</strong> Escrito em grego, foca na vida de Jesus Cristo e no nascimento da Igreja.</li>
+                <br>
+            </ul>
+        </section>
+
+        <section class="utilidade">
+            <br>
+            <h2>2. Para que ela serve?</h2>
+            <br>
+            <p>
+                A Bíblia serve como a <strong>matriz do conhecimento espiritual</strong>. Ela exerce funções vitais para o ser humano:
+            </p>
+            
+            <div class="cards-funcao">
+                <div class="card">
+                    <strong>Revelação</strong>
+                    <p>Mostra quem Deus é e Seu plano para o homem.</p>
+                </div>
+                <div class="card">
+                    <strong>Bússola Moral</strong>
+                    <p>Orienta nossas decisões em um mundo confuso.</p>
+                </div>
+                <div class="card">
+                    <strong>Alimento</strong>
+                    <p>Fortalece o espírito em momentos de fraqueza.</p>
+                </div>
+            </div>
+        </section>
+    </article>
+    </main>
+    <br>
+<br>
+<hr><u><p>Direitos Autorais Pertencentes à Empresa ACAJ - Sociedade Limitada Unipessoal - Inscrita no CNPJ: 54.574.507/0001-88</p></u>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matriz | O Futuro já Começou!</title>
+    <style>
+      /* Reset básico para evitar espaços em branco indesejados */
+      * { margin: 0; padding: 0; box-sizing: border-box;}
+   
+      /* Estilos Gerais */
+      body { background-color: #f0f0f0; font-family: Cambria, sans-serif; margin: 20px; }
+      h1 { color: navy; text-align: center; }
+      h2 {color: navy; font-weight: bold}
+      p { color: black; font-size: 20px;}
+      b { color: #4B0082; font-family: 'Cambria'; font-size: 23px;}
+      u {font-family: 'Cambria'; font-size: 20px; font-weight: bold;}
+
+    /* Barra de Navegação */
+    .navbar { background-color: #1a1a1a; display: flex; justify-content: center; padding: 20px; position: sticky; top: 0; z-index: 1000;} 
+
+    /* Lista Principal */
+    .nav-links {list-style: none; display: flex; }
+
+    /* Itens da Lista */ 
+    .nav-item { position: relative; }
+    
+    .nav-item a { color: white; text-decoration: none; padding: 20px 25px; display: block; text-transform: uppercase; font: size 20px; letter-spacing: 1px; }
+
+    .nav-item a:hover { background-color: #333; color: #daa520; }
+
+    /* Menu Suspenso */ 
+    .dropdown { display: none; position: absolute; background-color: #222; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); top: 100%; left: 0; }
+ 
+    .dropdown a { padding: 12px 20px; text-transform: none; border-bottom: 1px solid #333;}
+      
+    /* Mostrar o submenu ao passar o mouse */
+    .nav-item:hover .dropdown { display: block;}
+
+     /* Conteúdo da Página */
+     .main-content { max-width: 900px; margin: 50px auto; padding: 20px; line-height: 1.8; color: #333;}
+
+     .link-versiculo {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit;        /* Mantém a cor do texto original */
+    border-bottom: 1px dotted #daa520; /* Adiciona uma linha pontilhada dourada sutil */
+    transition: all 0.3s;
+    cursor: help;          /* Muda o mouse para um ícone de interrogação/ajuda */
+}
+
+.link-versiculo:hover {
+    background-color: #fffdf5;
+    border-bottom: 1px solid #b8860b;
+}
+
+ </style>
+  </head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="http://localhost/">Home ▼</a>
+        <div class="dropdown">
+        <a href="sobre.html">Sobre</a>
+        <a href="missão.html">Missão</a>
+        <a href="visão.html">Visão</a>
+        <a href="valores.html">Valores</a>  
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="o consolador.html">O Consolador ▼</a>  
+        <div class="dropdown">
+        <a href="sobre a bíblia.html">Sobre a Bíblia</a>
+        <a href="antigo testamento.html">Antigo Testamento</a>
+        <a href="#">Novo Testamento</a>
+        <a href="#">Dicionário Bíblico</a>
+        <a href="#">Mapas Bíblicos</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="#">&&&&& ▼</a>
+                <div class="dropdown">
+                    <a href="#">&&&&&</a>
+                    <a href="#">&&&&&</a> 
+                    <a href="#">&&&&&</a>
+                    <a href="#">&&&&&</a> 
+                </div>
+            </li>
+
+            <li class="nav-item"><a href="#">&&&&& ▼</a></li>
+            <li class="nav-item"><a href="#">&&&&& ▼</a></li>
+      
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <header class="livro-header">
+        <span class="categoria-tag">Pentateuco: O Primeiro Livro de Moisés</span>
+        <h1>Gênesis</h1>
+        <br>
+        <hr>
+        <p class="resumo-livro">O livro das origens: a criação do cosmos, da humanidade e o início da aliança divina.</p>
+    </header>
+    <hr>
+<br>
+    <nav class="capitulos-nav">
+        <a href="#cap1" class="cap-link active">1</a>
+        <a href="#cap2" class="cap-link">2</a>
+        <a href="#cap3" class="cap-link">3</a>
+        <a href="#cap4" class="cap-link">4</a>
+        <a href="#cap5" class="cap-link">5</a>
+        <a href="#cap6" class="cap-link">6</a>
+        <a href="#cap7" class="cap-link">7</a>
+        <a href="#cap8" class="cap-link">8</a>
+        <a href="#" class="cap-link">9</a>
+        <a href="#" class="cap-link">10</a>
+        <a href="#" class="cap-link">11</a>
+        <a href="#" class="cap-link">12</a>
+        <a href="#" class="cap-link">13</a>
+        <a href="#" class="cap-link">14</a>
+        <a href="#" class="cap-link">15</a>
+        <a href="#" class="cap-link">16</a>
+        <a href="#" class="cap-link">17</a>
+        <a href="#" class="cap-link">18</a>
+        <a href="#" class="cap-link">19</a>
+        <a href="#" class="cap-link">20</a>
+        <a href="#" class="cap-link">21</a>
+        <a href="#" class="cap-link">22</a>
+        <a href="#" class="cap-link">23</a>
+        <a href="#" class="cap-link">24</a>
+        <a href="#" class="cap-link">25</a>
+        <a href="#" class="cap-link">26</a>
+        <a href="#" class="cap-link">27</a>
+        <a href="#" class="cap-link">28</a>
+        <a href="#" class="cap-link">29</a>
+        <a href="#" class="cap-link">30</a>
+        <a href="#" class="cap-link">31</a>
+        <a href="#" class="cap-link">32</a>
+        <a href="#" class="cap-link">33</a>
+        <a href="#" class="cap-link">34</a>
+        <a href="#" class="cap-link">35</a>
+        <a href="#" class="cap-link">36</a>
+        <a href="#" class="cap-link">37</a>
+        <a href="#" class="cap-link">38</a>
+        <a href="#" class="cap-link">39</a>
+        <a href="#" class="cap-link">40</a>
+        <a href="#" class="cap-link">41</a>
+        <a href="#" class="cap-link">42</a>
+        <a href="#" class="cap-link">43</a>
+        <a href="#" class="cap-link">44</a>
+        <a href="#" class="cap-link">45</a>
+        <a href="#" class="cap-link">46</a>
+        <a href="#" class="cap-link">47</a>
+        <a href="#" class="cap-link">48</a>
+        <a href="#" class="cap-link">49</a>
+        <a href="#" class="cap-link">50</a>
+    </nav>
+<br>
+    <article id="cap1" class="capitulo-secao">
+        <h2 class="titulo-capitulo">Capítulo 1</h2>
+        <br>
+        <div class="leitura-layout">
+            <div class="texto-sagrado">
+                <p><u>A criação do céu e da terra e de tudo o que neles se contém</u></p>
+                <br>
+                <p><span class="versiculo">1</span> No princípio criou Deus os Céus e a terra.</p>
+                <p><span class="versiculo">2</span> E a terra era sem forma e vazia; e havia trevas sobre a face do abismo; e o Espírito de Deus se movia sobre a face das águas.</p>
+                <p><span class="versiculo">3</span> E disse Deus: Haja luz. E houve luz.</p>
+                <p><span class="versiculo">4</span> E viu Deus que era boa a luz; e fez Deus separação entre a luz e as trevas.</p>
+                <p><span class="versiculo">5</span> E Deus chamou à luz Dia; e às trevas chamou Noite. E foi a tarde e a manhã o dia primeiro.</p>
+                <p><span class="versiculo">6</span> E disse Deus: Haja uma expansão no meio das águas, e haja separação entre águas e águas.</p>
+                <p><span class="versiculo">7</span> E fez Deus a expansão, e fez separação entre as águas que estavam debaixo da expansão a as águas que estavam sobre a expansão. E assim foi.</p>
+                <p><span class="versiculo">8</span> E chamou Deus à expansão Céus, e foi a tarde e a manhã o dia segundo.</p>
+                <p><span class="versiculo">9</span> E disse Deus: Ajuntem-se as águas debaixo dos céus num lugar; e apareça a porção seca. E assim foi.</p>
+                <p><span class="versiculo">10</span> E chamou Deus à porção seca Terra; e ao ajuntamento das águas chamou Mares. E viu Deus que era bom.</p>
+                <p><span class="versiculo">11</span> E Disse Deus: Produza a terra erva verde, erva que dê semente, árvore frutífera que dê fruto segundo a sua espécie, cuja semente esteja nela sobre a terra. E assim foi.</p>
+                <p><span class="versiculo">12</span> E a terra produziu erva, erva dando semente conforme a sua espécie, e a árvore frutífera, cuja semente está nela conforme a sua espécie. E viu Deus que era bom.</p>
+                <p><span class="versiculo">13</span> E foi a tarde e a manhã o dia terceiro.</p>
+                <p><span class="versiculo">14</span> E disse Deus: Haja luminares na expansão dos céus, para haver separação entre o dia e a noite; e sejam eles para sinais e para tempos determinados e para dias e anos.</p>
+                <p><span class="versiculo">15</span> E sejam para luminares na expansão dos céus, para alumiar a terra. E assim foi.</p>
+                <p><span class="versiculo">16</span> E fez Deus os dois grandes luminares: o luminar maior para governar o dia, e o luminar menor para governar a noite; e fez as estrelas.</p>
+                <p><span class="versiculo">17</span> E Deus os pôs na expansão dos céus para alumiar a terra,</p>
+                <p><span class="versiculo">18</span> E para governar o dia e a noite, e para fazer separação entre a luz e as trevas. E viu Deus que era bom.</p>
+                <p><span class="versiculo">19</span> E foi a tarde e a manhã o dia quarto.</p>
+                <p><span class="versiculo">20</span> E disse Deus: Produzam as águas abundantemente répteis de alma vivente; e voem as aves sobre a face da expansão dos céus.</p>
+                <p><span class="versiculo">21</span> E Deus criou as grandes baleias, e todo réptil de alma vivente que as águas abundantemente produziram conforme as suas espécies; e toda ave de asas conforme a sua espécie. E viu Deus que era bom.</p>
+                <p><span class="versiculo">22</span> E Deus os abençoou, dizendo: Frutificai e multiplicai-vos, e enchei as águas nos mares; e as aves se multipliquem na terra.</p>
+                <p><span class="versiculo">23</span> E foi a tarde e a manhã o dia quinto.</p>
+            <br>
+                <p><u>A criação dos seres viventes</u></p>
+            <br>
+                <p><span class="versiculo">24</span> E disse Deus: Produza a terra alma vivente conforme a sua espécie; gado e répteis, e bestas-feras da terra conforme a sua espécie. E viu Deus que era bom.</p>
+                <p><span class="versiculo">25</span> E fez Deus as bestas-feras da terra conforme a sua espécie, e o gado conforme a sua espécie, e todo o réptil da terra conforme a sua espécie. E viu Deus que era bom.</p>
+                <p><span class="versiculo">26</span> E disse Deus: Façamos o homem à nossa imagem, conforme à nossa semelhança; e domine sobre os peixes do mar, e sobre as aves do céus, e sobre o gado, e sobre toda a terra, e sobre todo o réptil que se move sobre a terra.</p>
+                <p><span class="versiculo">27</span> E criou Deus o homem à sua imagem; à imagem de Deus o criou; macho e fêmea os criou.</p>
+                <p><a href="exegese/e Deus os abençoou.html" class="link-versiculo" title="Clique para ver a explanação"><span class="versiculo">28</span> E Deus os Abençoou</a>, e Deus lhes disse: Frutificai e multiplicai-vos, e enchei a terra, e sujeitai-a; e dominai sobre os peixes do mar, e sobre as aves dos céus, e sobre todo animal que se move sobre a terra</p>
+                <p><span class="versiculo">29</span> E disse Deus: Eis que vos tenho dado toda a erva que dá semente, que está sobre a face de toda a terra, e toda a árvore, em que há fruto de árvore que dá semente, ser-vos-á para mantimento.</p>
+                <p><span class="versiculo">30</span> E a todo o animal da terra, e a toda a ave dos céus, e a todo o réptil da terra, em que há alma vivente, toda a erva verde será para mantimento. E assim foi.</p>
+                <p><span class="versiculo">31</span> E viu Deus tudo quanto tinha feito, e eis que era muito bom: e foi a tarde e a manhã o dia sexto.</p>
+            </div>
+            <br>
+                <hr>
+        </div>
+    </article>
+<br>
+      <article id="cap1" class="capitulo-secao">
+        <h2 class="titulo-capitulo">Capítulo 2</h2>
+        <br>
+        <div class="leitura-layout">
+            <div class="texto-sagrado">
+                <p><u>A criação do céu e da terra e de tudo o que neles se contém</u></p>
+                <p><span class="versiculo">1</span> ASSIM os céus, e a terra e todo o seu exército foram acabados.</p>
+                <p><span class="versiculo">2</span> E havendo Deus acabado no dia sétimo a sua obra, que tinha feito, descansou no sétimo dia de toda a sua obra, que tinha feito.</p>
+                <p><span class="versiculo">3</span> E abençoou Deus o dia sétimo, e o santificou; porque nele descansou de toda a sua obra, que Deus criara e fizera.</p>
+                <br>
+                <p><u>A formação do jardim do Éden</u></p>
+            <br>
+                <p><span class="versiculo">4</span> Assim os céus e a terra e todo o seu exército foram acabados.</p>
+                <p><span class="versiculo">5</span> E havendo Deus acabado no dia sétimo a sua obra, que tinha feito, descansou no sétimo dia de toda a sua obra, que tinha feito.</p>
+                <p><span class="versiculo">6</span> E abençoou Deus o dia sétimo, e o santificou; porque nele descansou de toda a sua obra, que Deus criara e fizera.</p>
+                <br>
+                <p><u>A formação do jardim do Éden</u></p>
+            <br>
+                <p><span class="versiculo">4</span> E este é o nome da criação dos céus e da terra quando foram criados, no dia em que o Senhor Deus fez a terra e os céus.</p>
+                </div>
+                <hr>
+        </div>
+    </article>
+</main>
+<br>
+<hr><u><p>Direitos Autorais Pertencentes à Empresa ACAJ - Sociedade Limitada Unipessoal - Inscrita no CNPJ: 54.574.507/0001-88</p></u>
+</body>
+</html>
