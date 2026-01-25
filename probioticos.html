@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultoria em Probióticos & Saúde</title>
+    <title>Probiótika | Consultoria em Saúde</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --primary-color: #2c7a7b; 
-            --dark-green: #235e5f;    
-            --hover-green: #319795;   
-            --accent-color: #e53e3e;  
+            --dark-green: #235e5f; 
+            --hover-green: #319795; 
+            --accent-color: #e53e3e; 
             --bg-color: #f7fafc;
             --text-color: #2d3748;
             --white: #ffffff;
         }
 
-        /* Reset Geral para Publicação Independente */
+        /* Reset Geral */
         * {
             margin: 0;
             padding: 0;
@@ -31,7 +31,7 @@
             line-height: 1.6;
         }
 
-        /* HEADER & LOGO */
+        /* HEADER */
         header {
             background-color: var(--white);
             padding: 2rem 0 0 0;
@@ -67,6 +67,7 @@
             display: flex;
             width: 100%;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav ul li {
@@ -81,6 +82,7 @@
             font-weight: 600;
             font-size: 0.95rem;
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         nav ul li a:hover {
@@ -118,10 +120,10 @@
             display: block;
         }
 
-        /* LINK DE RETORNO (DESTAQUE) */
+        /* LINK DE RETORNO UNIFORME E SEM DIVISÓRIA */
         .link-retorno {
-            background-color: rgba(0,0,0,0.1);
-            border-left: 1px solid rgba(255,255,255,0.2);
+            background-color: transparent; 
+            border-left: none; /* Removida a divisória */
         }
 
         /* HERO SECTION */
@@ -167,14 +169,7 @@
             border: 1px solid #edf2f7;
         }
 
-        .post-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .post-card h3 {
-            margin-bottom: 1rem;
-            color: var(--dark-green);
-        }
+        .post-card:hover { transform: translateY(-10px); }
 
         .btn-read {
             color: var(--accent-color);
@@ -200,8 +195,6 @@
             transition: 0.3s;
         }
 
-        .whatsapp-btn:hover { transform: scale(1.05); }
-
         footer {
             text-align: center;
             padding: 4rem 20px;
@@ -210,19 +203,20 @@
             margin-top: 4rem;
         }
 
-        /* RESPONSIVIDADE */
+        /* RESPONSIVIDADE PARA CELULAR */
         @media (max-width: 768px) {
             nav ul { flex-direction: column; }
             .submenu { position: static; width: 100%; box-shadow: none; }
-            .hero h2 { font-size: 1.8rem; }
-            .link-retorno { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); }
+            header h1 { font-size: 1.8rem; }
+            .hero h2 { font-size: 1.6rem; }
+            nav ul li a { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Probióticos & Bem-Estar</h1>
+        <h1>Probiótika</h1>
         <nav>
             <div class="nav-container">
                 <ul>
@@ -241,20 +235,17 @@
                             <li><a href="#">Dicas de Alimentação</a></li>
                         </ul>
                     </li>
-                     <li>
+                    <li>
                         <a href="#">Marcas ▼</a>
                         <ul class="submenu">
                             <li><a href="#">Yakult</a></li>
-                            <li><a href="#">Fortalecimento Imunológico</a></li>
-                            <li><a href="#">Dicas de Alimentação</a></li>
+                            <li><a href="#">Probiótika</a></li>
                         </ul>
                     </li>
-                     <li>
+                    <li>
                         <a href="#">Produtos ▼</a>
                         <ul class="submenu">
                             <li><a href="#">Leite Fermentado</a></li>
-                            <li><a href="#">Fortalecimento Imunológico</a></li>
-                            <li><a href="#">Dicas de Alimentação</a></li>
                         </ul>
                     </li>
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScCJkOa0QlutNgcOVEzs8AOae3GZgcc326oSMJJMwySWy6Vug/viewform?usp=header" target="_blank">Contato</a></li>
@@ -289,7 +280,7 @@
                 
                 <article class="post-card">
                     <h3>Imunidade de Ferro</h3>
-                    <p>Descubra os melhores cepas de probióticos para fortalecer suas defesas naturais.</p>
+                    <p>Descubra as melhores cepas de probióticos para fortalecer suas defesas naturais.</p>
                     <a href="#" class="btn-read">Ler artigo completo →</a>
                 </article>
             </div>
