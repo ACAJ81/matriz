@@ -3,173 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matriz | O Futuro já Começou!</title>
-    <style>
-      /* Reset básico para evitar espaços em branco indesejados */
-      * { margin: 0; padding: 0; box-sizing: border-box;}
-   
-      /* Estilos Gerais */
-      body { background-color: #f0f0f0; font-family: Cambria, sans-serif; margin: 20px; }
-      h1 { color: navy; text-align: center; }
-      h2 {color: navy; font-weight: bold}
-      p { color: black; font-size: 20px;}
-      b { color: #4B0082; font-family: 'Cambria'; font-size: 23px;}
-      u {font-family: 'Cambria'; font-size: 20px; font-weight: bold;}
+  <title>Matriz | O Futuro já Começou!</title>
+  <style>
+    /* Reset básico */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-      /* Estilo específico para a página O Consolador */
+    /* Estilos Gerais */
+    body { 
+      background-color: #f0f0f0; 
+      font-family: Cambria, serif; 
+      margin: 0; 
+      padding: 0; 
+      line-height: 1.6;
+    }
 
-.subtitulo {
-    font-style: italic;
-    color: #555;
-    font-size: 1.2rem;
-    text-align: center;
-    margin-top: -10px;
-    margin-bottom: 30px;
-}
+    h1 { color: navy; text-align: center; padding: 20px 10px; font-size: 2rem; }
+    h2 { color: navy; font-weight: bold; margin-bottom: 15px; }
+    p { color: black; font-size: 1.2rem; margin-bottom: 15px; }
+    b, strong { color: #4B0082; font-weight: bold; }
+    
+    /* Estilo específico para a página O Consolador */
+    .subtitulo {
+      font-style: italic;
+      color: #555;
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 0 15px;
+    }
 
-hr {
-    border: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #daa520, transparent);
-    margin-bottom: 50px;
-}
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #daa520, transparent);
+      margin: 20px 0;
+    }
 
-.pilares {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    margin-top: 40px;
-}
+    .pilares {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin-top: 40px;
+    }
 
-.pilares h3 {
-    margin-top: 0;
-    color: #b8860b;
-}
+    .pilares h2 { color: #b8860b; font-size: 1.5rem; }
 
-.pilares ul {
-    list-style: none; /* Remove as bolinhas padrão */
-}
+    .pilares ul { list-style: none; }
+    .pilares ul li {
+      margin-bottom: 15px;
+      padding-left: 25px;
+      position: relative;
+      font-size: 1.1rem;
+    }
 
-.pilares ul li {
-    margin-bottom: 15px;
-    padding-left: 25px;
-    position: relative;
-}
-
-/* Adiciona um pequeno detalhe antes de cada pilar */
-.pilares ul li::before {
-    content: "◈";
-    position: absolute;
-    left: 0;
-    color: #daa520;
-}
+    .pilares ul li::before {
+      content: "◈";
+      position: absolute;
+      left: 0;
+      color: #daa520;
+    }
 
     /* Barra de Navegação */
-    .navbar { background-color: #1a1a1a; display: flex; justify-content: center; padding: 20px; position: sticky; top: 0; z-index: 1000;} 
+    .navbar { 
+      background-color: #1a1a1a; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+      width: 100%;
+    } 
 
-    /* Lista Principal */
-    .nav-links {list-style: none; display: flex; }
-
-    /* Itens da Lista */ 
-    .nav-item { position: relative; }
-    
-    .nav-item a { color: white; text-decoration: none; padding: 20px 25px; display: block; text-transform: uppercase; font: size 20px; letter-spacing: 1px; }
-
-    .nav-item a:hover { background-color: #333; color: #daa520; }
-
-    /* Menu Suspenso */ 
-    .dropdown { display: none; position: absolute; background-color: #222; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); top: 100%; left: 0; }
- 
-    .dropdown a { padding: 12px 20px; text-transform: none; border-bottom: 1px solid #333;}
-      
-    /* Mostrar o submenu ao passar o mouse */
-    .nav-item:hover .dropdown { display: block;}
-
-     /* Conteúdo da Página */
-     .main-content { max-width: 900px; margin: 50px auto; padding: 20px; line-height: 1.8; color: #333;}
-
- </style>
-  </head>
-<body>
-    <nav class="navbar">
-    <ul class="nav-links">
-      <li class="nav-item">
-        <a href="index.html">Inicial ▼</a> <div class="dropdown">
-          <a href="sobre.html">Sobre</a>
-          <a href="missão.html">Missão</a>
-          <a href="visão.html">Visão</a>
-          <a href="valores.html">Valores</a>  
-        </div>
-      </li>
-
-      <li class="nav-item">
-        <a href="o consolador.html">O Consolador ▼</a>  
-        <div class="dropdown">
-          <a href="sobre a bíblia.html">Sobre a Bíblia</a>
-          <a href="antigo testamento.html">Antigo Testamento</a>
-          <a href="#">Novo Testamento</a>
-          <a href="#">Dicionário Bíblico</a>
-          <a href="#">Mapas Bíblicos</a>
-        </div>
-      </li>
-
-      <li class="nav-item">
-        <a href="#">Teraphêutica ▼</a>
-        <div class="dropdown">
-          <a href="consultoria_saúde.html">Consultoria</a>
-          <a href="#">&&&&&&&</a> 
-        </div>
-      </li>
-
-
-      <li class="nav-item">
-        <a href="#">Comercial ▼</a>
-        <div class="dropdown">
-          <a href="https://www.acajimoveis.com.br">Imóveis</a>
-          <a href="#">Produtos</a>
-          <a href="#">&&&&&&&&</a>
-        </div>
-      </li>
-
-      <li class="nav-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBYDqF9TlYTp7953d3xWAO62NwvZcgE60vcFEdyRUT1TYxlQ/viewform?usp=header">Contato</a></li>
-    </ul>
-  </nav>
-  
-  <main class="main-content">
-<section class="apresentacao">
-        <h1>O Consolador</h1>
-        <br>
-        <p class="subtitulo">"E eu rogarei ao Pai, e ele vos dará outro Consolador, para que fique convosco para sempre." — João 14:16</p>
-        
-        <hr> <article class="proposito">
-            <br>
-            <h2>Propósito</h2>
-            <p>
-                Bem-vindo ao espaço <strong>O Consolador</strong>, um braço do Projeto Matriz dedicado à exposição das verdades eternas contidas nas Sagradas Escrituras. Nosso objetivo não é apenas informar, mas oferecer um refúgio de conhecimento espiritual fundamentado na Palavra de Deus.
-            </p>
-            
-            <p>
-                Em um mundo saturado de ruídos, buscamos o silêncio da sabedoria bíblica para responder às aflições da alma e aos questionamentos do espírito.
-            </p>
-        </article>
-
-        <section class="pilares">
-            <br>
-            <h2>Fundamentos desta Jornada</h2>
-            <ul>
-                <li><strong>Exegese Fiel:</strong> O compromisso com o sentido original do texto bíblico.</li>
-                <li><strong>Consolo Prático:</strong> A aplicação das promessas de Deus para o dia a dia.</li>
-                <li><strong>Diálogo com a Razão:</strong> A harmonia entre a fé revelada e o entendimento humano.</li>
-            </ul>
-        </section>
-    </main>
-<br>
-<hr><u><p>Direitos Autorais Pertencentes à Empresa ACAJ - Sociedade Limitada Unipessoal - Inscrita no CNPJ: 54.574.507/0001-88</p></u>
-</body>
-
-</html>
-
-
-
-
+    .nav-links {
