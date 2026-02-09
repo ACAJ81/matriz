@@ -1,100 +1,149 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matriz | O Futuro já Começou!</title>
   <style>
-    /* Reset básico */
-    * { margin: 0; padding: 0; box-sizing: border-box;}
+    /* 1. RESET E BASE */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+      background-color: #f4f4f4; 
+      font-family: 'Cambria', serif; 
+      line-height: 1.6; 
+      color: #333;
+    }
 
-    body { background-color: #f0f0f0; font-family: Cambria, sans-serif; }
-    h1 { color: navy; text-align: center; }
-    h2 { color: navy; font-weight: bold; }
-    p { color: black; font-size: 18px; } /* Ajustado para melhor leitura */
-    b { color: #4B0082; font-family: 'Cambria'; font-size: 23px; }
-    u { font-family: 'Cambria'; font-size: 16px; font-weight: bold; text-decoration: none; }
+    /* 2. TIPOGRAFIA */
+    h1 { color: navy; text-align: center; padding: 30px 10px; font-size: 2.2rem; }
+    h2 { color: navy; font-weight: bold; margin-bottom: 15px; font-size: 1.6rem; }
+    p { font-size: 1.15rem; margin-bottom: 15px; text-align: justify; }
+    b, strong { color: #4B0082; font-weight: bold; }
 
-    /* Barra de Navegação Responsiva */
+    /* 3. NAVEGAÇÃO (BARRA E LINKS) */
     .navbar { 
       background-color: #1a1a1a; 
-      display: flex; 
-      justify-content: center; 
-      padding: 10px; 
       position: sticky; 
       top: 0; 
-      z-index: 1000;
-    } 
+      z-index: 1000; 
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
 
     .nav-links {
-      list-style: none; 
-      display: flex; 
-      flex-wrap: wrap; /* Faz os itens pularem de linha no celular */
+      list-style: none;
+      display: flex;
       justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .nav-item { position: relative; }
-    
-    .nav-item a { 
-      color: white; 
-      text-decoration: none; 
-      padding: 15px 18px; 
-      display: block; 
-      text-transform: uppercase; 
-      font-size: 14px; /* Tamanho base menor para caber em telas médias */
-      letter-spacing: 1px; 
+
+    .nav-item a {
+      color: white;
+      text-decoration: none;
+      padding: 20px 25px;
+      display: block;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: background 0.3s, color 0.3s;
     }
 
     .nav-item a:hover { background-color: #333; color: #daa520; }
 
-    /* Menu Suspenso */ 
-    .dropdown { 
-      display: none; 
-      position: absolute; 
-      background-color: #222; 
-      min-width: 180px; 
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2); 
-      top: 100%; 
-      left: 0; 
+    /* 4. DROPDOWN (SUBMENUS) */
+    .dropdown {
+      display: none;
+      position: absolute;
+      background-color: #222;
+      min-width: 200px;
+      top: 100%;
+      left: 0;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
     }
- 
-    .dropdown a { 
-      padding: 12px 20px; 
-      text-transform: none; 
+
+    .dropdown a {
+      padding: 12px 20px;
+      text-transform: none;
       border-bottom: 1px solid #333;
       font-size: 14px;
     }
-      
+
     .nav-item:hover .dropdown { display: block; }
 
-    /* Conteúdo da Página */
-    .main-content { max-width: 900px; margin: 30px auto; padding: 20px; line-height: 1.6; color: #333; }
+    /* 5. CONTEÚDO E COMPONENTES */
+    .main-content { 
+      max-width: 900px; 
+      margin: 40px auto; 
+      padding: 0 20px; 
+    }
 
-    .footer-info { padding: 20px; text-align: center; border-top: 1px solid #ccc; margin-top: 20px; }
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #daa520, transparent);
+      margin: 30px 0;
+    }
 
-    /* --- ADAPTAÇÃO PARA CELULAR (Telas até 768px) --- */
+    .footer-info {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #ddd;
+      margin-top: 50px;
+      background: #fff;
+    }
+
+    .footer-info p {
+      font-size: 0.9rem;
+      text-decoration: underline;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* 6. ADAPTAÇÕES PARA CELULAR (RESPONSIVIDADE) */
     @media (max-width: 768px) {
-      .nav-item a {
-        padding: 10px 12px; /* Reduz espaço entre botões */
-        font-size: 12px;     /* Letras menores para caber no celular */
-      }
+      /* Menu vira uma lista vertical */
+      .nav-links { flex-direction: column; }
       
-      .dropdown {
-        position: static;   /* No celular, o submenu aparece abaixo do item, não flutuando */
-        width: 100%;
+      .nav-item { width: 100%; border-bottom: 1px solid #333; }
+      
+      .nav-item a {
+        text-align: center;
+        padding: 15px;
+        font-size: 14px;
       }
 
-      p { font-size: 16px; }
+      /* Dropdown expande o menu pai em vez de flutuar */
+      .dropdown {
+        position: static;
+        width: 100%;
+        background-color: #2c2c2c;
+        box-shadow: none;
+      }
+
+      .nav-item:active .dropdown,
+      .nav-item:hover .dropdown {
+        display: block;
+      }
+
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.4rem; }
+      p { font-size: 1.1rem; }
       
-      .main-content { margin: 10px auto; }
+      .main-content { margin: 20px auto; }
     }
   </style>
 </head>
 <body>
+
   <nav class="navbar">
     <ul class="nav-links">
       <li class="nav-item">
-        <a href="index.html">Inicial ▼</a> <div class="dropdown">
+        <a href="index.html">Inicial ▼</a>
+        <div class="dropdown">
           <a href="sobre.html">Sobre</a>
           <a href="missão.html">Missão</a>
           <a href="visão.html">Visão</a>
@@ -117,36 +166,44 @@
         <a href="#">Teraphêutica ▼</a>
         <div class="dropdown">
           <a href="consultoria_saúde.html">Consultoria</a>
-          <a href="#">&&&&&&&</a> 
+          <a href="#">Serviços</a> 
         </div>
       </li>
-
 
       <li class="nav-item">
         <a href="#">Comercial ▼</a>
         <div class="dropdown">
           <a href="https://www.acajimoveis.com.br">Imóveis</a>
           <a href="#">Produtos</a>
-          <a href="#">&&&&&&&&</a>
+          <a href="#">Parceiros</a>
         </div>
       </li>
 
-      <li class="nav-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBYDqF9TlYTp7953d3xWAO62NwvZcgE60vcFEdyRUT1TYxlQ/viewform?usp=header">Contato</a></li>
+      <li class="nav-item">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBYDqF9TlYTp7953d3xWAO62NwvZcgE60vcFEdyRUT1TYxlQ/viewform?usp=header">Contato</a>
+      </li>
     </ul>
   </nav>
 
   <main class="main-content">
     <h1>Projeto Matriz</h1>
-    <br>
-    <p>Explore o conhecimento de forma integrada. Utilize o menu acima para navegar entre as áreas da Matriz.</p>
+    <p>
+      Bem-vindo ao portal da <strong>Matriz</strong>. Aqui, integramos diferentes áreas do conhecimento e serviços em um único lugar. 
+      Navegue pelos menus acima para explorar nosso conteúdo dedicado à espiritualidade, saúde, negócios e muito mais.
+    </p>
+    
+    <hr>
+    
+    <h2>O Futuro já Começou!</h2>
+    <p>
+      Nossa estrutura foi pensada para oferecer uma experiência fluida, seja você um pesquisador das escrituras no espaço <em>O Consolador</em> 
+      ou alguém em busca de soluções comerciais e terapêuticas.
+    </p>
   </main>
 
   <footer class="footer-info">
-    <u><p>Direitos Autorais Pertencentes à Empresa ACAJ - Sociedade Limitada Unipessoal - Inscrita no CNPJ: 54.574.507/0001-88</p></u>
+    <p>Direitos Autorais Pertencentes à Empresa ACAJ - Sociedade Limitada Unipessoal - Inscrita no CNPJ: 54.574.507/0001-88</p>
   </footer>
+
 </body>
 </html>
-
-
-
-
