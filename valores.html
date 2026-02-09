@@ -2,51 +2,126 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valores | Projeto Matriz</title>
   <style>
-   
-      /* Estilos Gerais */
-      body { background-color: #f0f0f0; font-family: Cambria, sans-serif; margin: 20px; }
-      h1 { color: navy; text-align: center; }
-      h2 {color: navy; font-weight: bold}
-      p { color: black; font-size: 20px;}
-      b { color: #4B0082; font-family: 'Cambria'; font-size: 23px;}
-      u {font-family: 'Cambria'; font-size: 20px; font-weight: bold;}
-
-       /* Barra de Navegação */
-    .navbar { background-color: #1a1a1a; display: flex; justify-content: center; padding: 20px; position: sticky; top: 0; z-index: 1000;} 
-
-    /* Lista Principal */
-    .nav-links {list-style: none; display: flex; }
-
-    /* Itens da Lista */ 
-    .nav-item { position: relative; }
+    /* 1. RESET E BASE */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     
-    .nav-item a { color: white; text-decoration: none; padding: 20px 25px; display: block; text-transform: uppercase; font: size 20px; letter-spacing: 1px; }
+    body { 
+      background-color: #f4f4f4; 
+      font-family: 'Cambria', serif; 
+      line-height: 1.6; 
+      color: #333;
+    }
+
+    /* 2. TIPOGRAFIA */
+    h1 { color: navy; text-align: center; padding: 30px 10px; font-size: 2.2rem; }
+    p { font-size: 1.15rem; margin-bottom: 25px; text-align: justify; }
+    b { color: #4B0082; font-size: 1.3rem; }
+    u { font-weight: bold; text-decoration: none; border-bottom: 1px solid #daa520; }
+
+    /* 3. NAVEGAÇÃO (BARRA E LINKS) */
+    .navbar { 
+      background-color: #1a1a1a; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+      width: 100%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-item { position: relative; }
+
+    .nav-item a {
+      color: white;
+      text-decoration: none;
+      padding: 20px 25px;
+      display: block;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
 
     .nav-item a:hover { background-color: #333; color: #daa520; }
 
-    /* Menu Suspenso */ 
-    .dropdown { display: none; position: absolute; background-color: #222; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); top: 100%; left: 0; }
- 
-    .dropdown a { padding: 12px 20px; text-transform: none; border-bottom: 1px solid #333;}
+    /* 4. DROPDOWN (SUBMENUS) */
+    .dropdown {
+      display: none;
+      position: absolute;
+      background-color: #222;
+      min-width: 200px;
+      top: 100%;
+      left: 0;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+    }
+
+    .dropdown a {
+      padding: 12px 20px;
+      text-transform: none;
+      border-bottom: 1px solid #333;
+      font-size: 14px;
+    }
+
+    .nav-item:hover .dropdown { display: block; }
+
+    /* 5. CONTEÚDO ESPECÍFICO */
+    .conteudo-pagina { 
+      max-width: 900px; 
+      margin: 40px auto; 
+      padding: 0 30px; 
+    }
+
+    /* 6. RESPONSIVIDADE (CELULAR) */
+    @media (max-width: 768px) {
+      .nav-links { flex-direction: column; }
       
-    /* Mostrar o submenu ao passar o mouse */
-    .nav-item:hover .dropdown { display: block;}
+      .nav-item { width: 100%; border-bottom: 1px solid #333; }
+      
+      .nav-item a {
+        text-align: center;
+        padding: 15px;
+        font-size: 14px;
+      }
 
-     /* Conteúdo da Página */
-     .main-content { max-width: 900px; margin: 50px auto; padding: 20px; line-height: 1.8; color: #333;}
+      .dropdown {
+        position: static;
+        width: 100%;
+        background-color: #2c2c2c;
+      }
 
-      /* Margem */
-      .conteudo-pagina {max-width: 1000px; margin: 0 auto; padding: 0 40px; }  
+      .nav-item:active .dropdown,
+      .nav-item:hover .dropdown {
+        display: block;
+      }
 
+      h1 { font-size: 1.8rem; }
+      p { font-size: 1.1rem; margin-bottom: 20px; }
+      b { font-size: 1.2rem; }
+      
+      .conteudo-pagina { 
+        margin: 20px auto; 
+        padding: 0 20px; 
+      }
+    }
   </style>
 </head>
 
-  <body>
-    <nav class="navbar">
+<body>
+  <nav class="navbar">
     <ul class="nav-links">
       <li class="nav-item">
-        <a href="index.html">Inicial ▼</a> <div class="dropdown">
+        <a href="index.html">Inicial ▼</a>
+        <div class="dropdown">
           <a href="sobre.html">Sobre</a>
           <a href="missão.html">Missão</a>
           <a href="visão.html">Visão</a>
@@ -69,31 +144,31 @@
         <a href="#">Teraphêutica ▼</a>
         <div class="dropdown">
           <a href="consultoria_saúde.html">Consultoria</a>
-          <a href="#">&&&&&&&</a> 
+          <a href="#">Serviços</a> 
         </div>
       </li>
-
 
       <li class="nav-item">
         <a href="#">Comercial ▼</a>
         <div class="dropdown">
           <a href="https://www.acajimoveis.com.br">Imóveis</a>
           <a href="#">Produtos</a>
-          <a href="#">&&&&&&&&</a>
+          <a href="#">Negócios</a>
         </div>
       </li>
 
-      <li class="nav-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBYDqF9TlYTp7953d3xWAO62NwvZcgE60vcFEdyRUT1TYxlQ/viewform?usp=header">Contato</a></li>
+      <li class="nav-item">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBYDqF9TlYTp7953d3xWAO62NwvZcgE60vcFEdyRUT1TYxlQ/viewform?usp=header">Contato</a>
+      </li>
     </ul>
   </nav>
-    <br>
 
-    <main class="conteudo-pagina">
+  <main class="conteudo-pagina">
     <h1>Valores</h1>
-    <br>
+    
     <p><b>1.</b> <u>Compromisso com o Impacto Social</u>: A Matriz atua com propósito, aperfeiçoando a geração de transformações na vida das pessoas por meio da <u>tecnologia inovadora</u>.</p>
 
-    <p><b>2.</b> <u>Ética e Transparência</u>: A Matriz mantém uma conduta íntegra em todas as relações, promovendo a confiança à uma sociedade justa.</p>
+    <p><b>2.</b> <u>Ética e Transparência</u>: A Matriz mantém uma conduta íntegra em todas as relações, promovendo a confiança para uma sociedade justa.</p>
 
     <p><b>3.</b> <u>Inovação Contínua</u>: A Matriz está em constante evolução, antecipando tendências e oferecendo soluções criativas e eficazes.</p>
 
@@ -101,14 +176,8 @@
 
     <p><b>5.</b> <u>Colaboração e Diálogo</u>: A Matriz age com fé sob a força da escuta ativa e da construção conjunta com governos, empresas e população.</p>
 
-    <p><b>6.</b> <u>Visão Estratégica</u>: A Matriz tem seu foco no presente, conectando dados, pessoas e políticas públicas para decidir com inteligência.</p
-
+    <p><b>6.</b> <u>Visão Estratégica</u>: A Matriz tem seu foco no presente, conectando dados, pessoas e políticas públicas para decidir com inteligência.</p>
   </main>
 
-  </body>
-
+</body>
 </html>
-
-
-
-
