@@ -6,7 +6,7 @@
     <title>Finance | Análise Técnica</title>
     
     <style>
-        /* VARIÁVEIS DE CORES - MODO CLARO (PADRÃO) */
+        /* VARIÁVEIS DE CORES */
         :root {
             --bg: #ffffff;
             --header-bg: #ffffff;
@@ -16,9 +16,9 @@
             --card-bg: #ffffff;
             --chart-bg: #fafafa;
             --accent: #2ecc71;
+            --dropdown-bg: #ffffff;
         }
 
-        /* VARIÁVEIS DE CORES - MODO ESCURO */
         [data-theme="dark"] {
             --bg: #0a0a0a;
             --header-bg: #121212;
@@ -27,6 +27,7 @@
             --border: #222222;
             --card-bg: #161616;
             --chart-bg: #121212;
+            --dropdown-bg: #1a1a1a;
         }
 
         * {
@@ -41,7 +42,6 @@
             background-color: var(--bg);
             color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         .container {
@@ -50,14 +50,14 @@
             padding: 0 20px;
         }
 
-        /* CABEÇALHO */
+        /* CABEÇALHO E MENU */
         header {
-            padding: 20px 0;
+            padding: 15px 0;
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             background: var(--header-bg);
-            z-index: 100;
+            z-index: 1000;
         }
 
         nav {
@@ -72,50 +72,83 @@
             letter-spacing: -1.5px;
             text-transform: uppercase;
             color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links li {
+            position: relative;
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 10px 0;
+            display: block;
+        }
+
+        /* SUBMENU (DROPDOWN) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--dropdown-bg);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 1001;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dropdown-content a:last-child { border-bottom: none; }
+
+        .dropdown-content a:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        /* Mostrar dropdown ao passar o mouse */
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
-        /* BOTÃO DARK MODE */
         #theme-toggle {
             background: var(--border);
             border: none;
-            padding: 8px 12px;
+            padding: 6px 12px;
             border-radius: 20px;
             cursor: pointer;
             color: var(--text-main);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: bold;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
+        /* HERO & CONTEÚDO */
+        .hero { padding: 40px 0; text-align: center; }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
 
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            font-size: 0.85rem;
-        }
-
-        /* HERO */
-        .hero {
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-
-        /* GRÁFICO */
         .chart-box {
             margin: 20px 0;
             background: var(--chart-bg);
@@ -142,12 +175,8 @@
             font-weight: bold;
         }
 
-        .chart-display {
-            height: 500px;
-            width: 100%;
-        }
+        .chart-display { height: 550px; width: 100%; }
 
-        /* GRADES */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -155,24 +184,13 @@
             margin-bottom: 60px;
         }
 
-        .card {
-            padding: 25px;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            background: var(--card-bg);
-        }
+        .card { padding: 25px; border: 1px solid var(--border); border-radius: 12px; background: var(--card-bg); }
 
-        footer {
-            padding: 40px 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
+        footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8rem; }
 
+        /* MOBILE */
         @media (max-width: 768px) {
-            nav ul { display: none; }
-            .hero h1 { font-size: 1.8rem; }
+            .nav-links { display: none; } /* Ocultar menu no mobile para simplificar */
             .chart-display { height: 400px; }
         }
     </style>
@@ -182,12 +200,23 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Finance</div>
+                <a href="#" class="logo">Finance</a>
+                
                 <div class="nav-right">
-                    <ul>
-                        <li><a href="#">Mercados</a></li>
+                    <ul class="nav-links">
+                        <li class="dropdown">
+                            <a href="#">Mercados ▾</a>
+                            <div class="dropdown-content">
+                                <a href="#">WIN (Mini Índice)</a>
+                                <a href="#">WDO (Mini Dólar)</a>
+                                <a href="#">Ações (B3)</a>
+                                <a href="#">Criptomoedas</a>
+                            </div>
+                        </li>
+                        <li><a href="#">Estratégias</a></li>
+                        <li><a href="#">Setup</a></li>
                     </ul>
-                    <button id="theme-toggle">Alternar Tema</button>
+                    <button id="theme-toggle">Tema</button>
                 </div>
             </nav>
         </div>
@@ -196,36 +225,35 @@
     <main class="container">
         <section class="hero">
             <h1>Análise Técnica Simplificada</h1>
-            <p>Monitore o WIN com precisão e clareza visual.</p>
+            <p>Seu centro de monitoramento para o Mini Índice.</p>
         </section>
 
         <section class="chart-box">
             <div class="chart-header">
-                <strong>Mini Índice (WIN)</strong>
+                <strong>Monitoramento WIN1!</strong>
                 <div class="badge-live">● AO VIVO</div>
             </div>
-            <div class="chart-display" id="widget-container">
-                </div>
+            <div class="chart-display" id="widget-container"></div>
         </section>
 
         <section class="grid">
             <div class="card">
                 <h3>Análise WIN</h3>
-                <p class="text-muted">Projeções para o mini índice.</p>
+                <p>Projeções e níveis de preço para o índice hoje.</p>
             </div>
             <div class="card">
-                <h3>Setups</h3>
-                <p class="text-muted">Estratégias de entrada e saída.</p>
+                <h3>Price Action</h3>
+                <p>Estudo de padrões de candles e volume.</p>
             </div>
             <div class="card">
-                <h3>Diário</h3>
-                <p class="text-muted">Registro de performance.</p>
+                <h3>Gerenciamento</h3>
+                <p>Planilha de risco e metas diárias.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 FINANCE. O mercado recompensa a disciplina.</p>
+        <p>&copy; 2026 FINANCE. Disciplina e Paciência.</p>
     </footer>
 
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
@@ -234,7 +262,6 @@
         const body = document.body;
         let currentTheme = 'light';
 
-        // Função para carregar o gráfico
         function loadChart(theme) {
             document.getElementById('widget-container').innerHTML = '<div id="tradingview_win" style="width: 100%; height: 100%;"></div>';
             new TradingView.widget({
@@ -251,10 +278,8 @@
             });
         }
 
-        // Inicializa gráfico
         loadChart('light');
 
-        // Lógica de troca de tema
         themeToggle.addEventListener('click', () => {
             if (body.getAttribute('data-theme') === 'dark') {
                 body.removeAttribute('data-theme');
