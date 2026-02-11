@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChainTrade | Análise Técnica</title>
+    <title>ChainTrade | Análise Técnica Profissional</title>
     
     <style>
         /* VARIÁVEIS DE CORES */
@@ -15,7 +15,7 @@
             --border: #eeeeee;
             --card-bg: #ffffff;
             --chart-bg: #fafafa;
-            --accent: #2ecc71;
+            --accent: #2ecc71; /* Verde Trading */
             --dropdown-bg: #ffffff;
         }
 
@@ -67,12 +67,16 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            letter-spacing: -1.5px;
+            letter-spacing: -1px;
             text-transform: uppercase;
             color: var(--text-main);
             text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
         }
 
         .nav-links {
@@ -102,7 +106,7 @@
             top: 100%;
             left: 0;
             background-color: var(--dropdown-bg);
-            min-width: 160px;
+            min-width: 200px;
             box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
             border: 1px solid var(--border);
             border-radius: 8px;
@@ -123,7 +127,6 @@
             color: white;
         }
 
-        /* Mostrar dropdown ao passar o mouse */
         .dropdown:hover .dropdown-content {
             display: block;
         }
@@ -137,20 +140,30 @@
         #theme-toggle {
             background: var(--border);
             border: none;
-            padding: 6px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
             cursor: pointer;
             color: var(--text-main);
             font-size: 0.75rem;
             font-weight: bold;
+            text-transform: uppercase;
         }
 
-        /* HERO & CONTEÚDO */
-        .hero { padding: 40px 0; text-align: center; }
-        .hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        /* HERO SECTION */
+        .hero {
+            padding: 50px 0;
+            text-align: center;
+        }
 
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        /* GRÁFICO BOX */
         .chart-box {
-            margin: 20px 0;
+            margin: 20px 0 40px;
             background: var(--chart-bg);
             border: 1px solid var(--border);
             border-radius: 12px;
@@ -158,7 +171,7 @@
         }
 
         .chart-header {
-            padding: 12px 15px;
+            padding: 15px 20px;
             border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
@@ -169,28 +182,52 @@
         .badge-live {
             background: #ffebeb;
             color: #e74c3c;
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.7rem;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .chart-display { height: 550px; width: 100%; }
+        .chart-display {
+            height: 550px;
+            width: 100%;
+        }
 
+        /* GRID DE CONTEÚDO */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             margin-bottom: 60px;
         }
 
-        .card { padding: 25px; border: 1px solid var(--border); border-radius: 12px; background: var(--card-bg); }
+        .card {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--card-bg);
+        }
 
-        footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
 
-        /* MOBILE */
+        footer {
+            padding: 50px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* MEDIA QUERIES */
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* Ocultar menu no mobile para simplificar */
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
             .chart-display { height: 400px; }
         }
     </style>
@@ -199,8 +236,9 @@
 
     <header>
         <div class="container">
+           
             <nav>
-                <a href="ChainTrade.html" class="logo">ChainTrade</a>
+                <a href="ChainTrade.html" class="logo">Chain<span>Trade</span></a>
                 
                 <div class="nav-right">
                     <ul class="nav-links">
@@ -236,42 +274,44 @@
                     </ul>
                     <button id="theme-toggle">Tema</button>
                 </div>
-            </nav>
+            </nav> 
+
         </div>
     </header>
 
     <main class="container">
         <section class="hero">
-            <h1>Análise Técnica Simplificada</h1>
-            <p>Seu centro de monitoramento para o Mini Índice.</p>
+            <h1>Monitoramento Estratégico</h1>
+            <p>Conectando dados e disciplina para uma análise técnica superior.</p>
         </section>
 
         <section class="chart-box">
             <div class="chart-header">
-                <strong>Monitoramento WIN1!</strong>
+                <strong>Análise em Tempo Real: WIN1!</strong>
                 <div class="badge-live">● AO VIVO</div>
             </div>
-            <div class="chart-display" id="widget-container"></div>
+            <div class="chart-display" id="widget-container">
+                </div>
         </section>
 
         <section class="grid">
             <div class="card">
-                <h3>&&&&&</h3>
-                <p>&&&&&</p>
+                <h3>Price Action</h3>
+                <p>O estudo do movimento do preço sem indicadores atrasados. Foco em suportes, resistências e tendências.</p>
             </div>
             <div class="card">
-                <h3>&&&&&</h3>
-                <p>&&&&&</p>
+                <h3>Gerenciamento</h3>
+                <p>A corrente só é forte quanto seu elo mais fraco. Proteja seu capital com uma gestão de risco rigorosa.</p>
             </div>
             <div class="card">
-                <h3>&&&&&</h3>
-                <p>&&&&&</p>
+                <h3>Build in Public</h3>
+                <p>Acompanhe minha jornada de aprendizado e os estudos diários sobre os minicontratos futuros.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 ChainTrade. Disciplina que leva ao Alcance.</p>
+        <p>&copy; 2026 ChainTrade. O mercado é uma maratona, não um sprint.</p>
     </footer>
 
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
