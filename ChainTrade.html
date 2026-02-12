@@ -14,7 +14,7 @@
             --border: #eeeeee;
             --card-bg: #ffffff;
             --chart-bg: #fafafa;
-            --accent: #2ecc71;
+            --accent: #2ecc71; /* Verde Trading */
             --dropdown-bg: #ffffff;
         }
 
@@ -56,7 +56,7 @@
             position: sticky;
             top: 0;
             background: var(--header-bg);
-            z-index: 2000; /* Aumentado para ficar acima de tudo */
+            z-index: 2000;
         }
 
         nav {
@@ -106,7 +106,7 @@
             top: 100%;
             left: 0;
             background-color: var(--dropdown-bg);
-            min-width: 180px;
+            min-width: 200px;
             box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
             border: 1px solid var(--border);
             border-radius: 8px;
@@ -117,9 +117,16 @@
             padding: 12px 16px;
             border-bottom: 1px solid var(--border);
             font-size: 0.8rem;
+            transition: 0.2s;
         }
 
-        /* HOVER DESKTOP */
+        /* COR VERDE NO HOVER (O que estava faltando) */
+        .dropdown-content a:hover {
+            background-color: var(--accent) !important;
+            color: white !important;
+        }
+
+        /* EXIBIÇÃO DO DROPDOWN NO DESKTOP */
         @media (min-width: 769px) {
             .dropdown:hover .dropdown-content { display: block; }
         }
@@ -134,17 +141,17 @@
         }
 
         #theme-toggle {
-            background: var(--accent);
-            color: white;
+            background: var(--border);
             border: none;
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
             cursor: pointer;
+            color: var(--text-main);
             font-size: 0.7rem;
             font-weight: bold;
         }
 
-        /* MOBILE ADJUSTMENTS */
+        /* AJUSTES MOBILE */
         @media (max-width: 768px) {
             .mobile-menu-btn { display: block; }
 
@@ -170,7 +177,6 @@
                 border-bottom: 1px solid var(--border);
             }
 
-            /* Mostra submenu se o pai tiver a classe 'open' */
             .dropdown.open .dropdown-content {
                 display: block;
                 position: static;
@@ -180,7 +186,7 @@
             }
         }
 
-        /* CARDS & CHARTS */
+        /* CONTEÚDO */
         .hero { padding: 40px 0; text-align: center; }
         .hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
         .chart-box { margin: 20px 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
@@ -195,7 +201,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">Chain<span>Trade</span></a>
+                <a href="ChainTrade.html" class="logo">Chain<span>Trade</span></a>
                 
                 <div class="nav-right">
                     <button id="theme-toggle">TEMA</button>
@@ -206,9 +212,9 @@
                             <a class="drop-trigger">Análise Técnica ▾</a>
                             <div class="dropdown-content">
                                 <a href="análise_técnica_de_ações.html">O que é?</a>
-                                <a href="#">Padrões de Candle</a>
-                                <a href="#">Suporte e Resistência</a>
+                                <a href="#">Padrões Gráficos</a>
                                 <a href="#">Indicadores</a>
+                                <a href="#">Teoria de Dow</a>
                             </div>
                         </li>
                         <li class="dropdown">
@@ -224,11 +230,11 @@
                         <li><a href="#">Setup</a></li>
                         <li><a href="#">Diário</a></li>
                         <li class="dropdown">
-                            <a class="drop-trigger">Mais ▾</a>
+                            <a class="drop-trigger">Fontes ▾</a>
                             <div class="dropdown-content">
                                 <a href="https://www.investopedia.com/" target="_blank">Investopedia</a>
-                                <a href="#">Calculadora</a>
-                                <a href="#">Sobre</a>
+                                <a href="#">TradingView</a>
+                                <a href="#">B3</a>
                             </div>
                         </li>
                     </ul>
@@ -239,15 +245,15 @@
 
     <main class="container">
         <section class="hero">
-            <h1>ChainTrade</h1>
-            <p>Conectando dados, tecnologia e análise técnica profissional.</p>
+            <h1>Monitoramento Estratégico</h1>
+            <p>Conectando dados, tecnologia e disciplina para trading profissional.</p>
         </section>
 
         
 
         <section class="chart-box">
             <div class="chart-header">
-                <strong>Mini Índice (WIN1!) - 5min</strong>
+                <strong>Análise WIN1! - Tempo Real</strong>
                 <span style="color:#e74c3c; font-weight:bold; font-size: 0.8rem;">● AO VIVO</span>
             </div>
             <div class="chart-display" id="tradingview_container"></div>
@@ -255,23 +261,23 @@
 
         <section class="grid">
             <div class="card">
-                <h3>Monitoramento</h3>
-                <p>Acompanhe o Mini Índice em tempo real com as principais ferramentas de Price Action.</p>
+                <h3>Price Action</h3>
+                <p>Estudo puro do movimento dos preços através de suportes, resistências e tendências.</p>
             </div>
             <div class="card">
-                <h3>Educação</h3>
-                <p>Acesse nossa aba de Análise Técnica para entender como o mercado se move.</p>
+                <h3>Gerenciamento</h3>
+                <p>Risco controlado e disciplina são os pilares da consistência no mercado financeiro.</p>
             </div>
             <div class="card">
-                <h3>Comunidade</h3>
-                <p>Parte do projeto Build in Public: compartilhando cada passo da jornada trading.</p>
+                <h3>Build in Public</h3>
+                <p>Compartilhando estudos e o desenvolvimento do projeto ChainTrade diariamente.</p>
             </div>
         </section>
     </main>
 
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
     <script>
-        // MENU MOBILE LOGIC
+        // MENU MOBILE E DROP CLICK
         const mobileBtn = document.getElementById('mobile-btn');
         const navMenu = document.getElementById('nav-menu');
         const dropTriggers = document.querySelectorAll('.drop-trigger');
@@ -281,7 +287,6 @@
             mobileBtn.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
         });
 
-        // Clique para abrir dropdown no mobile
         dropTriggers.forEach(trigger => {
             trigger.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
