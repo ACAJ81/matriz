@@ -15,7 +15,7 @@
             --border: #eeeeee;
             --card-bg: #ffffff;
             --chart-bg: #fafafa;
-            --accent: #2ecc71; /* Verde Trading */
+            --accent: #2ecc71;
             --dropdown-bg: #ffffff;
         }
 
@@ -50,7 +50,6 @@
             padding: 0 20px;
         }
 
-        /* CABEÇALHO E MENU */
         header {
             padding: 15px 0;
             border-bottom: 1px solid var(--border);
@@ -73,12 +72,12 @@
             text-transform: uppercase;
             color: var(--text-main);
             text-decoration: none;
+            z-index: 1001;
         }
 
-        .logo span {
-            color: var(--accent);
-        }
+        .logo span { color: var(--accent); }
 
+        /* MENU DESKTOP */
         .nav-links {
             display: flex;
             list-style: none;
@@ -99,7 +98,7 @@
             display: block;
         }
 
-        /* SUBMENU (DROPDOWN) */
+        /* DROPDOWN */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -111,30 +110,23 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             overflow: hidden;
+        }
+
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .dropdown-content a:hover { background-color: var(--accent); color: white; }
+
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+
+        /* BOTÃO MENU MOBILE (HAMBÚRGUER) */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            cursor: pointer;
             z-index: 1001;
-        }
-
-        .dropdown-content a {
-            padding: 12px 16px;
-            font-size: 0.85rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .dropdown-content a:last-child { border-bottom: none; }
-
-        .dropdown-content a:hover {
-            background-color: var(--accent);
-            color: white;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
         }
 
         #theme-toggle {
@@ -149,85 +141,47 @@
             text-transform: uppercase;
         }
 
-        /* HERO SECTION */
-        .hero {
-            padding: 50px 0;
-            text-align: center;
-        }
+        /* HERO & CONTENT */
+        .hero { padding: 50px 0; text-align: center; }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; }
+        .chart-box { margin: 20px 0 40px; background: var(--chart-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+        .chart-header { padding: 15px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--card-bg); }
+        .chart-display { height: 550px; width: 100%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .card { padding: 30px; border: 1px solid var(--border); border-radius: 12px; background: var(--card-bg); }
+        footer { padding: 50px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.85rem; }
 
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        /* GRÁFICO BOX */
-        .chart-box {
-            margin: 20px 0 40px;
-            background: var(--chart-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .chart-header {
-            padding: 15px 20px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--card-bg);
-        }
-
-        .badge-live {
-            background: #ffebeb;
-            color: #e74c3c;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .chart-display {
-            height: 550px;
-            width: 100%;
-        }
-
-        /* GRID DE CONTEÚDO */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
-        }
-
-        .card {
-            padding: 30px;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            background: var(--card-bg);
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-            color: var(--accent);
-        }
-
-        footer {
-            padding: 50px 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* MEDIA QUERIES */
+        /* --- AJUSTES MOBILE --- */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2rem; }
+            .mobile-menu-btn { display: block; }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Escondido fora da tela */
+                height: 100vh;
+                width: 70%;
+                background: var(--header-bg);
+                flex-direction: column;
+                padding-top: 80px;
+                transition: 0.4s;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                align-items: flex-start;
+            }
+
+            .nav-links.active { right: 0; } /* Mostra o menu */
+
+            .nav-links li { margin: 15px 30px; }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                border: none;
+                display: block; /* No mobile, deixamos os itens visíveis ou clicáveis */
+                padding-left: 15px;
+            }
+
+            .hero h1 { font-size: 1.8rem; }
             .chart-display { height: 400px; }
         }
     </style>
@@ -236,19 +190,19 @@
 
     <header>
         <div class="container">
-           
             <nav>
-                <a href="ChainTrade.html" class="logo">Chain<span>Trade</span></a>
+                <a href="#" class="logo">Chain<span>Trade</span></a>
                 
                 <div class="nav-right">
-                    <ul class="nav-links">
+                    <button id="theme-toggle">Tema</button>
+                    <button class="mobile-menu-btn" id="mobile-btn">☰</button>
+                    
+                    <ul class="nav-links" id="nav-menu">
                         <li class="dropdown">
-                            <a href="análise_técnica_de_ações.html">Análise Técnica ▾</a>
+                            <a href="#">Análise Técnica ▾</a>
                             <div class="dropdown-content">
-                                <a href="#">&&&&&&</a>
-                                <a href="#">&&&&&&</a>
-                                <a href="#">&&&&&&</a>
-                                <a href="#">&&&&&&</a>
+                                <a href="#">Estudos de Preço</a>
+                                <a href="#">Padrões Gráficos</a>
                             </div>
                         </li>
                         <li class="dropdown">
@@ -256,26 +210,18 @@
                             <div class="dropdown-content">
                                 <a href="#">WIN (Mini Índice)</a>
                                 <a href="#">WDO (Mini Dólar)</a>
-                                <a href="#">Ações (B3)</a>
-                                <a href="#">Criptomoedas</a>
                             </div>
                         </li>
                         <li><a href="#">Estratégias</a></li>
-                        <li><a href="#">Setup</a></li>
                         <li class="dropdown">
                             <a href="#">Fontes ▾</a>
                             <div class="dropdown-content">
-                                <a href="https://www.investopedia.com/" target="_blank" rel="noopener noreferrer">Investopedia</a>
-                                <a href="#">&&&&&&</a>
-                                <a href="#">&&&&&&</a>
-                                <a href="#">&&&&&&</a>
+                                <a href="https://www.investopedia.com/" target="_blank">Investopedia</a>
                             </div>
                         </li>
                     </ul>
-                    <button id="theme-toggle">Tema</button>
                 </div>
             </nav> 
-
         </div>
     </header>
 
@@ -288,37 +234,32 @@
         <section class="chart-box">
             <div class="chart-header">
                 <strong>Análise em Tempo Real: WIN1!</strong>
-                <div class="badge-live">● AO VIVO</div>
+                <div class="badge-live" style="color:red">● AO VIVO</div>
             </div>
-            <div class="chart-display" id="widget-container">
-                </div>
+            <div class="chart-display" id="widget-container"></div>
         </section>
 
         <section class="grid">
-            <div class="card">
-                <h3>Price Action</h3>
-                <p>O estudo do movimento do preço sem indicadores atrasados. Foco em suportes, resistências e tendências.</p>
-            </div>
-            <div class="card">
-                <h3>Gerenciamento</h3>
-                <p>A corrente só é forte quanto seu elo mais fraco. Proteja seu capital com uma gestão de risco rigorosa.</p>
-            </div>
-            <div class="card">
-                <h3>Build in Public</h3>
-                <p>Acompanhe minha jornada de aprendizado e os estudos diários sobre os minicontratos futuros.</p>
-            </div>
+            <div class="card"><h3>Price Action</h3><p>Foco em suportes, resistências e tendências.</p></div>
+            <div class="card"><h3>Gerenciamento</h3><p>Proteja seu capital com rigor.</p></div>
+            <div class="card"><h3>Build in Public</h3><p>Jornada de aprendizado real.</p></div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 ChainTrade. O mercado é uma maratona, não um sprint.</p>
-    </footer>
-
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
     <script>
+        // Lógica do Menu Mobile
+        const mobileBtn = document.getElementById('mobile-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileBtn.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Lógica do Tema e Gráfico
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
-        let currentTheme = 'light';
 
         function loadChart(theme) {
             document.getElementById('widget-container').innerHTML = '<div id="tradingview_win" style="width: 100%; height: 100%;"></div>';
@@ -330,8 +271,6 @@
                 "theme": theme,
                 "style": "1",
                 "locale": "br",
-                "enable_publishing": false,
-                "hide_top_toolbar": false,
                 "container_id": "tradingview_win"
             });
         }
@@ -339,14 +278,14 @@
         loadChart('light');
 
         themeToggle.addEventListener('click', () => {
-            if (body.getAttribute('data-theme') === 'dark') {
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            if (isDark) {
                 body.removeAttribute('data-theme');
-                currentTheme = 'light';
+                loadChart('light');
             } else {
                 body.setAttribute('data-theme', 'dark');
-                currentTheme = 'dark';
+                loadChart('dark');
             }
-            loadChart(currentTheme);
         });
     </script>
 </body>
