@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Missão - Consultoria em Saúde</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c7a7b; 
+            --dark-green: #235e5f; 
+            --bg-color: #f7fafc;
+            --text-color: #2d3748;
+            --white: #ffffff;
+            --accent-color: #e53e3e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--white);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 20px;
+        }
+
+        .content-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 3.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        h1, h2 { color: var(--primary-color); }
+        h1 { font-size: 2.5rem; text-align: center; margin-bottom: 2rem; }
+        h2 { font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1.5rem; text-align: center; }
+        
+        p { margin-bottom: 1.5rem; text-align: justify; font-size: 1.1rem; }
+
+        .mission-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .value-card {
+            padding: 2rem;
+            border-radius: 12px;
+            background: #f8fafc;
+            border-top: 5px solid var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .value-card h3 { color: var(--dark-green); margin-bottom: 1rem; }
+
+        .quote-box {
+            background: #f0fdfa;
+            padding: 2rem;
+            border-radius: 12px;
+            font-style: italic;
+            text-align: center;
+            margin: 2rem 0;
+            border-left: 10px solid var(--primary-color);
+        }
+
+        .btn-return {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .btn-return:hover { color: var(--accent-color); }
+
+        @media (max-width: 768px) {
+            .mission-values { grid-template-columns: 1fr; }
+            .content-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2 style="margin:0; border:none;">Consultoria em Saúde</h2>
+    </header>
+
+    <main class="container">
+        <article class="content-card">
+            <h1>Nossa Missão</h1>
+            
+            <p>A nossa missão é <strong>disseminar</strong> o conhecimento científico sobre a microbiota intestinal, capacitando indivíduos a assumirem o controle da sua saúde de forma preventiva. Acreditamos que um intestino em equilíbrio é o alicerce fundamental para uma vida livre de inflamações sistêmicas e complicações metabólicas.</p>
+
+            <div class="quote-box">
+                "Promover a eubiose para que cada pessoa possa desfrutar de uma longevidade ativa e plena, fundamentada na ciência da modulação intestinal."
+            </div>
+
+            <h2>Os Nossos Pilares de Compromisso</h2>
+
+            <div class="mission-values">
+                <div class="value-card">
+                    <h3>Rigor Científico</h3>
+                    <p>Baseamos as nossas orientações em estudos clínicos que comprovam a eficácia das linhagens de probióticos na modulação do sistema imune e no combate à disbiose.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Prevenção Ativa</h3>
+                    <p>O nosso foco é mitigar riscos de endotoxemia metabólica e inflamação de baixo grau, agindo antes que o desequilíbrio afete o metabolismo de glicose e lipídios.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Educação em Saúde</h3>
+                    <p>Simplificamos dados técnicos sobre neurotransmissores e o eixo intestino-cérebro para promover melhorias reais no humor e na cognição.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Equilíbrio Sistêmico</h3>
+                    <p>Trabalhamos para restaurar a integridade da barreira epitelial, garantindo que o organismo mantenha o equilíbrio das funções gastrointestinais.</p>
+                </div>
+            </div>
+
+            <h2>Visão de Futuro</h2>
+            <p>Aspiramos ser referência em consultoria de saúde intestinal, onde o uso estratégico de probióticos e prebióticos é compreendido como uma ferramenta de precisão para a saúde e bem-estar.</p>
+
+            <a href="consultoria_saúde.html" class="btn-return">← Voltar para a Inicial</a>
+        </article>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: #718096; font-size: 0.9rem;">
+        &copy; 2026 Consultoria - Saúde em Harmonia
+    </footer>
+
+</body>
+</html>
