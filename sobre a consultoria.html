@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre a Consultoria - Saúde em Harmonia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c7a7b; 
+            --dark-green: #235e5f; 
+            --bg-color: #f7fafc;
+            --text-color: #2d3748;
+            --white: #ffffff;
+            --accent-color: #e53e3e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--white);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .container {
+            max-width: 1000px; /* Aumentado levemente para acomodar melhor os 4 itens */
+            margin: 3rem auto;
+            padding: 0 20px;
+        }
+
+        .content-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 3.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        h1, h2, h3 { color: var(--primary-color); }
+        h1 { font-size: 2.5rem; text-align: center; margin-bottom: 2rem; }
+        h2 { font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; border-left: 5px solid var(--primary-color); padding-left: 15px; }
+        
+        p { margin-bottom: 1.5rem; text-align: justify; font-size: 1.1rem; }
+
+        /* GRID ATUALIZADA PARA 4 COLUNAS PROPORCIONAIS */
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Força 4 colunas iguais */
+            gap: 1.5rem;
+            margin: 3rem 0;
+            width: 100%;
+        }
+
+        .vision-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #f0fdfa;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            border: 1px solid #e6fffa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .vision-item:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+
+        .vision-item span { font-size: 3rem; display: block; margin-bottom: 1rem; }
+        .vision-item h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+        .vision-item p { font-size: 0.95rem; text-align: center; margin-bottom: 0; line-height: 1.4; }
+
+        .product-section {
+            background: #1a202c;
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+
+        .product-section h3 { color: #4fd1c5; margin-bottom: 1rem; }
+
+        .cta-box {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            border: 2px dashed var(--primary-color);
+            border-radius: 15px;
+        }
+
+        .btn-return {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVIDADE PARA TABLETS E CELULARES */
+        @media (max-width: 992px) {
+            .vision-grid { grid-template-columns: repeat(2, 1fr); } /* 2x2 em tablets */
+        }
+
+        @media (max-width: 600px) {
+            .vision-grid { grid-template-columns: 1fr; } /* 1 coluna em celulares */
+            .content-card { padding: 1.5rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2 style="margin:0; border:none;">Consultoria Saúde</h2>
+    </header>
+
+    <main class="container">
+        <article class="content-card">
+            <h1>Ciência e Cuidado: Nossa Consultoria</h1>
+            
+            <p>Nossa consultoria nasceu da convicção de que o intestino é o epicentro da saúde humana. Com base sólida em estudos sobre microbiota e o impacto dos <strong>probióticos</strong> no organismo, trabalhamos para transformar a saúde de forma preventiva e educacional.</p>
+
+            <div class="vision-grid">
+                <div class="vision-item">
+                    <span>📚</span>
+                    <h3>Educação</h3>
+                    <p>Traduzimos a ciência da microbiota para o seu dia a dia.</p>
+                </div>
+                <div class="vision-item">
+                    <span>🛡️</span>
+                    <h3>Prevenção</h3>
+                    <p>Atuamos antes da doença chegar ao organismo.</p>
+                </div>
+                <div class="vision-item">
+                    <span>🌱</span>
+                    <h3>Eubiose</h3>
+                    <p>O equilíbrio perfeito do seu "jardim interno" intestinal.</p>
+                </div>
+                <div class="vision-item">
+                    <span>⏳</span>
+                    <h3>Longevidade</h3>
+                    <p>Cuidado hoje para colher uma vida longa e ativa amanhã.</p>
+                </div>
+            </div>
+
+            <h2>Nossa Filosofia</h2>
+            <p>Acreditamos que a <strong>prevenção é o melhor caminho</strong>. Em vez de apenas tratar sintomas, focamos na raiz do problema: o equilíbrio bacteriano. Através da modulação intestinal, ajudamos a evitar condições como a endotoxemia metabólica e a inflamação de baixo grau, fundamentais para a saúde metabólica.</p>
+
+            <div class="product-section">
+                <h3>Produtos e Suporte</h3>
+                <p>Para complementar nossa consultoria educacional, trabalhamos com as melhores soluções em probióticos e prebióticos do mercado:</p>
+                <ul style="padding-left: 20px;">
+                    <li><strong>Protocolos de Modulação:</strong> Planos personalizados para restaurar a diversidade bacteriana.</li>
+                    <li><strong>Curadoria de Probióticos:</strong> Seleção de linhagens específicas como <em>Lactobacillus</em> e <em>Bifidobacterium</em>.</li>
+                    <li><strong>Suporte Contínuo:</strong> Acompanhamento para ajustes no estilo de vida e dieta.</li>
+                </ul>
+            </div>
+
+            <div class="cta-box">
+                <h3>Pronto para iniciar sua jornada preventiva?</h3>
+                <p>Vamos juntos construir uma base sólida para a sua saúde.</p>
+                <a href="https://wa.me/5511950640669" style="background: var(--primary-color); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px;">Agendar Consultoria Individual</a>
+            </div>
+
+            <a href="consultoria_saúde.html" class="btn-return">← Voltar para a Home</a>
+        </article>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: #718096; font-size: 0.9rem;">
+        &copy; 2026 Consultoria - Saúde em Harmonia
+    </footer>
+
+</body>
+</html>
