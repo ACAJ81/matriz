@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Segundo Cérebro - Consultoria em Saúde</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c7a7b; 
+            --dark-green: #235e5f; 
+            --bg-color: #f7fafc;
+            --text-color: #2d3748;
+            --white: #ffffff;
+            --accent-color: #e53e3e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--white);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 20px;
+        }
+
+        .content-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        h1, h2, h3 { color: var(--primary-color); margin-bottom: 1.5rem; }
+        h1 { font-size: 2.2rem; text-align: center; }
+        h2 { font-size: 1.8rem; margin-top: 2rem; border-bottom: 2px solid #edf2f7; padding-bottom: 10px; }
+        
+        p { margin-bottom: 1.2rem; text-align: justify; }
+
+        .info-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #ed8936;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .mechanisms-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .mechanism-card {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .btn-return {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .mechanisms-grid { grid-template-columns: 1fr; }
+            .content-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2 style="margin:0; border:none;">Consultoria em Saúde</h2>
+    </header>
+
+    <main class="container">
+        <article class="content-card">
+            <h1>O Segundo Cérebro: A Conexão Intestino-Cérebro</h1>
+            
+            <p>Você já sentiu "frio na barriga" ao ficar nervoso ou perdeu o apetite diante de uma preocupação? Isso não é coincidência. O nosso sistema digestivo possui uma rede neural tão complexa que é cientificamente chamada de <strong>Sistema Nervoso Entérico</strong> — o nosso "Segundo Cérebro".</p>
+
+            
+
+            <h2>Como essa comunicação funciona?</h2>
+            <p>A comunicação entre o intestino e o cérebro ocorre de forma bidirecional através de vias neurais, hormonais e imunológicas. Os principais canais de comunicação são:</p>
+
+            <div class="mechanisms-grid">
+                <div class="mechanism-card">
+                    <h3>O Nervo Vago</h3>
+                    <p>Funciona como uma "autoestrada" de informações, conectando diretamente o sistema digestivo ao tronco encefálico.</p>
+                </div>
+                <div class="mechanism-card">
+                    <h3>Neurotransmissores</h3>
+                    <p>A microbiota intestinal é responsável pela produção de grande parte da <strong>serotonina</strong>, GABA e dopamina do corpo.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>Você sabia?</strong> Cerca de 90% da serotonina (neurotransmissor do bem-estar) é produzida no intestino, e não no cérebro. Por isso, o equilíbrio da microbiota é vital para a saúde mental.
+            </div>
+
+            <h2>O Impacto da Disbiose nas Emoções</h2>
+            <p>Quando ocorre a disbiose (o desequilíbrio bacteriano), essa linha de comunicação é prejudicada. Alterações na microbiota intestinal estão diretamente associadas a:</p>
+            <ul>
+                <li><strong>Mudanças de humor e irritabilidade</strong>;</li>
+                <li><strong>Aumento de sintomas de ansiedade e depressão</strong>;</li>
+                <li><strong>Alterações na cognição e foco mental</strong>.</li>
+            </ul>
+
+            <h2>O Papel do Estresse</h2>
+            <p>O estresse crônico cria um ciclo vicioso: ele altera as respostas neuroendócrinas, o que aumenta a permeabilidade da mucosa e afeta a motilidade intestinal. Isso cria condições favoráveis ao desequilíbrio da microbiota, piorando ainda mais o estado emocional.</p>
+
+            <h3>Conclusão</h3>
+            <p>Cuidar da sua alimentação e manter a <strong>eubiose</strong> (o equilíbrio intestinal) é, literalmente, cuidar da sua saúde mental. Um intestino saudável é o primeiro passo para uma mente tranquila.</p>
+
+            <a href="consultoria_saúde.html" class="btn-return">← Voltar para a página principal</a>
+        </article>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: #718096; font-size: 0.9rem;">
+        &copy; 2026 Consultoria - Saúde em Harmonia
+    </footer>
+
+</body>
+</html>
