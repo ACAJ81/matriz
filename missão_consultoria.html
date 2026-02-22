@@ -12,7 +12,6 @@
             --bg-color: #f7fafc;
             --text-color: #2d3748;
             --white: #ffffff;
-            --accent-color: #e53e3e;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,7 +31,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 3rem auto;
             padding: 0 20px;
         }
@@ -44,28 +43,43 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
-        h1, h2 { color: var(--primary-color); }
-        h1 { font-size: 2.5rem; text-align: center; margin-bottom: 2rem; }
-        h2 { font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1.5rem; text-align: center; }
+        h1, h2, h3 { color: var(--primary-color); text-align: center; }
+        h1 { font-size: 2.5rem; margin-bottom: 2rem; }
+        h2 { font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1.5rem; }
         
-        p { margin-bottom: 1.5rem; text-align: justify; font-size: 1.1rem; }
+        p { margin-bottom: 1.5rem; text-align: center; font-size: 1.1rem; }
 
         .mission-values {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
             margin: 3rem 0;
         }
 
         .value-card {
-            padding: 2rem;
+            padding: 2.5rem 1.5rem;
             border-radius: 12px;
             background: #f8fafc;
             border-top: 5px solid var(--primary-color);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
         }
 
-        .value-card h3 { color: var(--dark-green); margin-bottom: 1rem; }
+        .value-card h3 { 
+            color: var(--dark-green); 
+            margin-bottom: 1rem; 
+            font-size: 1.4rem; 
+        }
+
+        .value-card p { 
+            font-size: 1rem; 
+            line-height: 1.5; 
+            text-align: center; 
+            margin-bottom: 0; 
+        }
 
         .quote-box {
             background: #f0fdfa;
@@ -77,20 +91,25 @@
             border-left: 10px solid var(--primary-color);
         }
 
+        .future-vision {
+            background: #f1f5f9;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            border-bottom: 5px solid var(--primary-color);
+        }
+
         .btn-return {
             display: inline-block;
             margin-top: 2rem;
             color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s;
         }
 
-        .btn-return:hover { color: var(--accent-color); }
-
         @media (max-width: 768px) {
-            .mission-values { grid-template-columns: 1fr; }
             .content-card { padding: 1.5rem; }
+            .mission-values { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -104,7 +123,7 @@
         <article class="content-card">
             <h1>Nossa Missão</h1>
             
-            <p>A nossa missão é <strong>disseminar</strong> o conhecimento científico sobre a microbiota intestinal, capacitando indivíduos a assumirem o controle da sua saúde de forma preventiva. Acreditamos que um intestino em equilíbrio é o alicerce fundamental para uma vida livre de inflamações sistêmicas e complicações metabólicas.</p>
+            <p>Nossa missão é <strong>disseminar</strong> o conhecimento científico sobre a microbiota intestinal, capacitando indivíduos a assumirem o controle da saúde de forma preventiva.</p>
 
             <div class="quote-box">
                 "Promover a eubiose para que cada pessoa possa desfrutar de uma longevidade ativa e plena, fundamentada na ciência da modulação intestinal."
@@ -115,26 +134,28 @@
             <div class="mission-values">
                 <div class="value-card">
                     <h3>Rigor Científico</h3>
-                    <p>Baseamos as nossas orientações em estudos clínicos que comprovam a eficácia das linhagens de probióticos na modulação do sistema imune e no combate à disbiose.</p>
+                    <p>Baseamos orientações em estudos clínicos de linhagens como Lactobacillus e Bifidobacterium para modular o sistema imune.</p>
                 </div>
                 <div class="value-card">
                     <h3>Prevenção Ativa</h3>
-                    <p>O nosso foco é mitigar riscos de endotoxemia metabólica e inflamação de baixo grau, agindo antes que o desequilíbrio afete o metabolismo de glicose e lipídios.</p>
+                    <p>Focamos em mitigar a endotoxemia metabólica e inflamações crônicas agindo antes da patologia clínica.</p>
                 </div>
                 <div class="value-card">
                     <h3>Educação em Saúde</h3>
-                    <p>Simplificamos dados técnicos sobre neurotransmissores e o eixo intestino-cérebro para promover melhorias reais no humor e na cognição.</p>
+                    <p>Simplificamos o eixo intestino-cérebro para promover melhorias reais no humor e na cognição.</p>
                 </div>
                 <div class="value-card">
                     <h3>Equilíbrio Sistêmico</h3>
-                    <p>Trabalhamos para restaurar a integridade da barreira epitelial, garantindo que o organismo mantenha o equilíbrio das funções gastrointestinais.</p>
+                    <p>Trabalhamos para restaurar a integridade da barreira intestinal e a produção de AGCC.</p>
                 </div>
             </div>
 
-            <h2>Visão de Futuro</h2>
-            <p>Aspiramos ser referência em consultoria de saúde intestinal, onde o uso estratégico de probióticos e prebióticos é compreendido como uma ferramenta de precisão para a saúde e bem-estar.</p>
+            <section class="future-vision">
+                <h2>Visão de Futuro</h2>
+                <p>Aspiramos ser referência em consultoria de saúde intestinal, onde o uso estratégico de probióticos e prebióticos é compreendido como uma ferramenta de precisão para a saúde e bem-estar.</p>
+            </section>
 
-            <a href="consultoria_saúde.html" class="btn-return">← Voltar para a Inicial</a>
+            <a href="consultoria_saúde.html" class="btn-return">← Voltar para a Home</a>
         </article>
     </main>
 
