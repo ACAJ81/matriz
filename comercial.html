@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Comercial - Facilita Lar</title>
+    <style>
+        :root {
+            --azul: #005a63;
+            --ouro: #ffcc00;
+            --branco: #ffffff;
+            --texto: #333;
+            --fundo-cinza: #f9f9f9;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--texto); line-height: 1.6; margin: 0; padding: 0; background-color: var(--branco); }
+
+        /* Banner de Entrada */
+        .hero-comercial {
+            background-color: var(--azul);
+            color: var(--branco);
+            padding: 4rem 1rem;
+            text-align: center;
+            border-bottom: 6px solid var(--ouro);
+        }
+
+        .hero-comercial h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero-comercial p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; opacity: 0.9; }
+
+        /* Seção de Pilares */
+        .secao-beneficios { max-width: 1000px; margin: 4rem auto; padding: 0 1rem; }
+
+        .grid-beneficios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card-beneficio {
+            background: var(--fundo-cinza);
+            padding: 2rem;
+            border-radius: 15px;
+            border-top: 4px solid var(--azul);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card-beneficio:hover { transform: translateY(-10px); }
+
+        .icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+
+        .card-beneficio h3 { color: var(--azul); margin-bottom: 1rem; }
+
+        /* Texto de Fechamento */
+        .garantia-box {
+            background-color: #fff9e6;
+            border: 2px dashed var(--ouro);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 4rem auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .cta-botao {
+            display: inline-block;
+            background-color: var(--azul);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-botao:hover { background-color: #00454d; transform: scale(1.05); }
+
+        @media (max-width: 600px) {
+            .hero-comercial h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-comercial">
+        <h1>Consultoria & Oportunidades</h1>
+        <p>Unindo a confiança da curadoria especializada com a solidez da maior plataforma de varejo do Brasil.</p>
+    </section>
+
+    <div class="secao-beneficios">
+        <h2 style="text-align: center; color: var(--azul);">Por que comprar através da nossa curadoria?</h2>
+        
+        <div class="grid-beneficios">
+            <div class="card-beneficio">
+                <span class="icon">🔍</span>
+                <h3>O Veredito Técnico</h3>
+                <p>Diferente de lojas comuns, aqui cada item passa por uma análise de custo-benefício. Só indicamos o que realmente possui qualidade aprovada para o seu lar.</p>
+            </div>
+
+            <div class="card-beneficio">
+                <span class="icon">🛡️</span>
+                <h3>Segurança Magalu</h3>
+                <p>Toda a transação financeira é realizada dentro do ecossistema do <strong>Magazine Luiza</strong>. Seus dados estão protegidos por criptografia de ponta a ponta.</p>
+            </div>
+
+            <div class="card-beneficio">
+                <span class="icon">🚚</span>
+                <h3>Logística Imbatível</h3>
+                <p>Aproveite a entrega mais rápida do Brasil. Com o Magalu Entregas, você acompanha seu pedido em tempo real até a porta da sua casa.</p>
+            </div>
+        </div>
+
+        <div class="garantia-box">
+            <h3>Sua Satisfação é o nosso Objetivo</h3>
+            <p>Como Influenciador Magalu, meu papel é facilitar sua vida. Caso precise de suporte, troca ou devolução, você conta com toda a infraestrutura física e digital do Magazine Luiza em todo o país.</p>
+<p>Navegue pelas abbas deste bloco Comercial, ou clique no botão abaixo.</p>
+            <br>
+            <a href="magalu.html" class="cta-botao">Acessar Vitrine de Ofertas</a>
+<p>Boas Compras!</p>
+        </div>
+    </div>
+
+</body>
+</html>
