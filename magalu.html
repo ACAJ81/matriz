@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilita Lar - Curadoria Magalu</title>
+    <style>
+        /* =============================================
+           CONFIGURAÇÕES GERAIS (CSS)
+           ============================================= */
+        :root {
+            --azul: #005a63;
+            --ouro: #ffcc00;
+            --fundo: #f4f4f4;
+            --branco: #ffffff;
+            --texto: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+
+        body { background-color: var(--fundo); color: var(--texto); line-height: 1.6; }
+
+        header {
+            background-color: var(--azul);
+            color: var(--branco);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--ouro);
+        }
+
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+
+        h2.secao-titulo { 
+            color: var(--azul); 
+            margin: 2rem 0 1rem; 
+            border-left: 5px solid var(--ouro); 
+            padding-left: 10px;
+        }
+
+        /* =============================================
+           TEMPLATE A: O VEREDITO COM CARROSSEL
+           ============================================= */
+        .card-destaque {
+            background: var(--branco);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border: 2px solid var(--ouro);
+            margin-bottom: 2rem;
+        }
+
+        .badge-veredito {
+            background: var(--ouro);
+            color: #000;
+            font-weight: bold;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .destaque-flex { display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; align-items: center; }
+
+        /* Carrossel */
+        .carrossel-container {
+            flex: 1;
+            min-width: 280px;
+            display: flex;
+            overflow-x: hidden; /* Escondemos a barra para o motor controlar */
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .carrossel-item {
+            flex: 0 0 100%;
+            scroll-snap-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .foto-carrossel {
+            width: 100%;
+            max-height: 350px;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .info-destaque { flex: 1.2; min-width: 280px; }
+
+        .nome-destaque { font-size: 1.5rem; font-weight: bold; color: var(--azul); margin-bottom: 15px; }
+
+        .veredito-box {
+            background: #fff9e6;
+            border-left: 5px solid var(--ouro);
+            padding: 15px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        /* =============================================
+           TEMPLATE B: ACHADINHOS (GRADE)
+           ============================================= */
+        .grid-achadinhos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card-achadinho {
+            background: var(--branco);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .card-achadinho:hover { transform: translateY(-5px); }
+
+        .foto-pequena { width: 100%; height: 180px; object-fit: contain; margin-bottom: 10px; }
+
+        .nome-achadinho { font-size: 0.95rem; font-weight: bold; color: var(--azul); margin-bottom: 15px; height: 45px; overflow: hidden; }
+
+        /* =============================================
+           BOTÕES
+           ============================================= */
+        .btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-principal { background: var(--azul); color: white; padding: 15px; font-size: 1.1rem; }
+        .btn-principal:hover { background: #00454d; }
+
+        .btn-secundario { background: transparent; color: var(--azul); border: 2px solid var(--azul); padding: 10px; font-size: 0.9rem; }
+        .btn-secundario:hover { background: var(--azul); color: white; }
+
+        .whatsapp-float {
+            position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white;
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            text-decoration: none; z-index: 1000;
+        }
+
+        footer { text-align: center; padding: 3rem; color: #888; font-size: 0.8rem; }
+
+        @media (max-width: 600px) {
+            .destaque-flex { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>FACILITA LAR</h1>
+        <p>A curadoria com o veredito certo</p>
+    </header>
+
+    <div class="container">
+
+        <h2 class="secao-titulo">⭐ O Veredito da Semana</h2>
+        
+        <div class="card-destaque">
+            <div class="badge-veredito">Destaque de Qualidade</div>
+            <div class="destaque-flex">
+                
+                <div class="carrossel-container" id="motor-carrossel">
+                    <div class="carrossel-item">
+                        <img src="imagens/potes-1.jpg" alt="Pote de Vidro 1" class="foto-carrossel">
+                    </div>
+                    <div class="carrossel-item">
+                        <img src="imagens/potes-2.jpg" alt="Pote de Vidro 2" class="foto-carrossel">
+                    </div>
+                    <div class="carrossel-item">
+                        <img src="imagens/potes-3.jpg" alt="Pote de Vidro 3" class="foto-carrossel">
+                    </div>
+                </div>
+                
+                <div class="info-destaque">
+                    <div class="nome-destaque">Os Mais Vendidos da Semana!</div>
+                    <div class="veredito-box">
+    <strong>🏆 Por que é o Top Vendas:</strong> 
+    Estes produtos são os campeões de buscas esta semana porque une durabilidade com o menor preço do mercado. 
+    Nossa análise técnica confirma: é a melhor escolha para quem quer modernizar a cozinha sem gastar muito.
+</div>
+                    <a href="COLOQUE_SEU_LINK_AQUI" target="_blank" class="btn btn-principal">Ver Oferta no Magalu</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="secao-titulo">📦 Achadinhos de Giro Rápido</h2>
+        
+        <div class="grid-achadinhos">
+            <div class="card-achadinho">
+  <img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\Jogo 4 Potes de Vidro Hermético Marmita Tampa 4 Travas 640ml - DONA LAURA.jpg" alt="Mop" class="foto-pequena">
+                <div class="nome-achadinho">Mop Giratório Prática Fit</div>
+                <a href="LINK_AQUI" target="_blank" class="btn btn-secundario">Ver Preço</a>
+            </div>
+
+            <div class="card-achadinho">
+                <img src="imagens/organizador.jpg" alt="Organizador" class="foto-pequena">
+                <div class="nome-achadinho">Organizador de Geladeira Clear</div>
+                <a href="LINK_AQUI" target="_blank" class="btn btn-secundario">Ver Preço</a>
+            </div>
+
+            <div class="card-achadinho">
+                <img src="imagens/airfryer.jpg" alt="Airfryer" class="foto-pequena">
+                <div class="nome-achadinho">Airfryer Nell 3.2L Black</div>
+                <a href="LINK_AQUI" target="_blank" class="btn btn-secundario">Ver Preço</a>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank">💬</a>
+
+    <footer>
+        <p>&copy; 2026 Facilita Lar - Parceiro Magalu</p>
+    </footer>
+
+    <script>
+        const container = document.getElementById('motor-carrossel');
+        let index = 0;
+        const totalItens = document.querySelectorAll('.carrossel-item').length;
+
+        function moverCarrossel() {
+            index++;
+            if (index >= totalItens) {
+                index = 0;
+            }
+            // Move o scroll para a largura do container vezes o index atual
+            container.scrollTo({
+                left: container.offsetWidth * index,
+                behavior: 'smooth'
+            });
+        }
+
+        // Troca a foto a cada 3 segundos
+        setInterval(moverCarrossel, 3000);
+
+        // Ajuste para redimensionamento de janela
+        window.addEventListener('resize', () => {
+            container.scrollTo({ left: container.offsetWidth * index });
+        });
+    </script>
+
+</body>
+</html>
