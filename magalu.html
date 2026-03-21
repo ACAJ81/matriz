@@ -6,7 +6,7 @@
     <title>Facilita Lar - Curadoria Magalu</title>
     <style>
         /* =============================================
-           CONFIGURAÇÕES GERAIS (CSS)
+           CONFIGURAÇÕES GERAIS (MANTIDAS)
            ============================================= */
         :root {
             --azul: #005a63;
@@ -17,7 +17,6 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
-
         body { background-color: var(--fundo); color: var(--texto); line-height: 1.6; }
 
         header {
@@ -38,7 +37,35 @@
         }
 
         /* =============================================
-           TEMPLATE A: O VEREDITO COM CARROSSEL
+           ESTILO DO CARROSSEL (Geral para Veredito e Achadinhos)
+           ============================================= */
+        .carrossel-container {
+            display: flex;
+            overflow-x: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            border-radius: 10px;
+            background: #fff;
+            width: 100%;
+        }
+
+        .carrossel-item {
+            flex: 0 0 100%;
+            scroll-snap-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .foto-carrossel, .video-carrossel {
+            width: 100%;
+            max-height: 350px;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        /* =============================================
+           TEMPLATE A: O VEREDITO
            ============================================= */
         .card-destaque {
             background: var(--branco);
@@ -60,35 +87,7 @@
         }
 
         .destaque-flex { display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; align-items: center; }
-
-        /* Carrossel */
-        .carrossel-container {
-            flex: 1;
-            min-width: 280px;
-            display: flex;
-            overflow-x: hidden; /* Escondemos a barra para o motor controlar */
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            border-radius: 10px;
-            background: #fff;
-        }
-
-        .carrossel-item {
-            flex: 0 0 100%;
-            scroll-snap-align: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .foto-carrossel {
-            width: 100%;
-            max-height: 350px;
-            object-fit: contain;
-            padding: 10px;
-        }
-
         .info-destaque { flex: 1.2; min-width: 280px; }
-
         .nome-destaque { font-size: 1.5rem; font-weight: bold; color: var(--azul); margin-bottom: 15px; }
 
         .veredito-box {
@@ -100,11 +99,11 @@
         }
 
         /* =============================================
-           TEMPLATE B: ACHADINHOS (GRADE)
+           TEMPLATE B: ACHADINHOS (CARROSSEL INTERNO)
            ============================================= */
         .grid-achadinhos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
@@ -120,12 +119,16 @@
 
         .card-achadinho:hover { transform: translateY(-5px); }
 
-        .foto-pequena { width: 100%; height: 180px; object-fit: contain; margin-bottom: 10px; }
+        /* Ajuste do carrossel dentro do achadinho */
+        .card-achadinho .carrossel-container {
+            height: 220px;
+            margin-bottom: 10px;
+        }
 
         .nome-achadinho { font-size: 0.95rem; font-weight: bold; color: var(--azul); margin-bottom: 15px; height: 45px; overflow: hidden; }
 
         /* =============================================
-           BOTÕES
+           BOTÕES E COMPLEMENTOS
            ============================================= */
         .btn {
             display: block;
@@ -171,26 +174,27 @@
             <div class="badge-veredito">Destaque de Qualidade</div>
             <div class="destaque-flex">
                 
-                <div class="carrossel-container" id="motor-carrossel">
+                <div class="carrossel-container motor-carrossel">
                     <div class="carrossel-item">
-                        <img src="imagens/potes-1.jpg" alt="Pote de Vidro 1" class="foto-carrossel">
+                        <img src="imagens/potes-1.jpg" alt="Pote 1" class="foto-carrossel">
                     </div>
                     <div class="carrossel-item">
-                        <img src="imagens/potes-2.jpg" alt="Pote de Vidro 2" class="foto-carrossel">
+                        <img src="imagens/potes-2.jpg" alt="Pote 2" class="foto-carrossel">
                     </div>
                     <div class="carrossel-item">
-                        <img src="imagens/potes-3.jpg" alt="Pote de Vidro 3" class="foto-carrossel">
+                        <video class="video-carrossel" autoplay muted loop playsinline>
+                            <source src="imagens/video-potes.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
                 
                 <div class="info-destaque">
                     <div class="nome-destaque">Os Mais Vendidos da Semana!</div>
                     <div class="veredito-box">
-    <strong>🏆 Por que é o Top Vendas:</strong> 
-    Estes produtos são os campeões de buscas esta semana porque une durabilidade com o menor preço do mercado. 
-    Nossa análise técnica confirma: é a melhor escolha para quem quer modernizar a cozinha sem gastar muito.
-</div>
-                    <a href="COLOQUE_SEU_LINK_AQUI" target="_blank" class="btn btn-principal">Ver Oferta no Magalu</a>
+                        <strong>🏆 Por que é o Top Vendas:</strong> 
+                        Estes produtos unem durabilidade com o menor preço do mercado. Nossa análise confirma: modernidade e economia para sua cozinha.
+                    </div>
+                    <a href="LINK_MAGALU_AQUI" target="_blank" class="btn btn-principal">Ver Oferta no Magalu</a>
                 </div>
             </div>
         </div>
@@ -198,25 +202,57 @@
         <h2 class="secao-titulo">📦 Achadinhos de Giro Rápido</h2>
         
         <div class="grid-achadinhos">
+            
             <div class="card-achadinho">
-  <img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\Jogo 4 Potes de Vidro Hermético Marmita Tampa 4 Travas 640ml - DONA LAURA.jpg" alt="Mop" class="foto-pequena">
-                <div class="nome-achadinho">Mop Giratório Prática Fit</div>
-                <a href="LINK_AQUI" target="_blank" class="btn btn-secundario">Ver Preço</a>
+                <div class="carrossel-container motor-carrossel">
+                    <div class="carrossel-item">
+                        <img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\Jogo 4 Potes de Vidro Hermético Marmita Tampa 4 Travas 640ml - DONA LAURA.jpg" class="foto-carrossel">
+                    </div>
+                    <div class="carrossel-item">
+                        <img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\Potes D Laura.jpg" class="foto-carrossel">
+                    </div>
+                    <div class="carrossel-item">
+                        <img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\Potes D Laura1.jpg" class="foto-carrossel">
+                    </div>
+                    <div class="carrossel-item">
+                        <img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\potes d laura2.jpg" class="foto-carrossel">
+                    </div>
+                </div>
+                <div class="nome-achadinho">Jogo 4 Potes de Vidro Hermético Marmita Tampa 4 Travas 640ml - DONA LAURA</div>
+               <a href="https://www.magazinevoce.com.br/magazineachadinhosacaj/jogo-4-potes-de-vidro-hermetico-marmita-tampa-4-travas-640ml-dona-laura/p/dd9a6ek93d/ud/poud/?seller_id=donalaurautilidadesdomesticas" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="btn btn-secundario">
+   Ver Preço
+</a>
             </div>
 
             <div class="card-achadinho">
-                <img src="imagens/organizador.jpg" alt="Organizador" class="foto-pequena">
-                <div class="nome-achadinho">Organizador de Geladeira Clear</div>
-                <a href="LINK_AQUI" target="_blank" class="btn btn-secundario">Ver Preço</a>
+                <div class="carrossel-container motor-carrossel">
+                    <div class="carrossel-item"><img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\processador1.jpg" class="foto-carrossel"></div>
+                    <div class="carrossel-item"><img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\processador2.jpg" class="foto-carrossel"></div>
+                    <div class="carrossel-item"><img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\processador4.jpg" class="foto-carrossel"></div>
+                    <div class="carrossel-item"><img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\processador5.jpg" class="foto-carrossel"></div>
+                </div>
+                <div class="nome-achadinho">Mini Processador Alimentos Manual 3 Lâminas Id Utilidade</div>
+                  <a href="https://www.magazinevoce.com.br/magazineachadinhosacaj/mini-processador-alimentos-manual-3-laminas-id-utilidade/p/ga989dh70f/ud/prcm/?seller_id=loarymix" target="_blank" rel="noopener noreferrer" class="btn btn-secundario">Ver Preço</a>
             </div>
 
             <div class="card-achadinho">
-                <img src="imagens/airfryer.jpg" alt="Airfryer" class="foto-pequena">
+                <div class="carrossel-container motor-carrossel">
+                    <div class="carrossel-item"><img src="imagens/air-1.jpg" class="foto-carrossel"></div>
+                    <div class="carrossel-item">
+                        <video class="video-carrossel" autoplay muted loop playsinline>
+                            <source src="imagens/airfryer-video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carrossel-item"><img src="imagens/air-2.jpg" class="foto-carrossel"></div>
+                </div>
                 <div class="nome-achadinho">Airfryer Nell 3.2L Black</div>
-                <a href="LINK_AQUI" target="_blank" class="btn btn-secundario">Ver Preço</a>
+                <a href="LINK_AQUI" class="btn btn-secundario">Ver Preço</a>
             </div>
-        </div>
 
+        </div>
     </div>
 
     <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank">💬</a>
@@ -226,30 +262,32 @@
     </footer>
 
     <script>
-        const container = document.getElementById('motor-carrossel');
-        let index = 0;
-        const totalItens = document.querySelectorAll('.carrossel-item').length;
+        // Seleciona todos os carrosséis da página
+        const carrosseis = document.querySelectorAll('.motor-carrossel');
 
-        function moverCarrossel() {
-            index++;
-            if (index >= totalItens) {
-                index = 0;
+        carrosseis.forEach((container) => {
+            let index = 0;
+            const itens = container.querySelectorAll('.carrossel-item');
+            const total = itens.length;
+
+            function mover() {
+                index++;
+                if (index >= total) index = 0;
+                
+                container.scrollTo({
+                    left: container.offsetWidth * index,
+                    behavior: 'smooth'
+                });
             }
-            // Move o scroll para a largura do container vezes o index atual
-            container.scrollTo({
-                left: container.offsetWidth * index,
-                behavior: 'smooth'
+
+            // Inicia o intervalo individual para cada carrossel
+            setInterval(mover, 3500);
+
+            // Garante que o scroll se ajuste ao redimensionar a tela
+            window.addEventListener('resize', () => {
+                container.scrollTo({ left: container.offsetWidth * index });
             });
-        }
-
-        // Troca a foto a cada 3 segundos
-        setInterval(moverCarrossel, 3000);
-
-        // Ajuste para redimensionamento de janela
-        window.addEventListener('resize', () => {
-            container.scrollTo({ left: container.offsetWidth * index });
         });
     </script>
-
 </body>
 </html>
