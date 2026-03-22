@@ -7,6 +7,7 @@
     <style>
         :root {
             --azul: #005a63;
+            --azul-escuro: #00454d;
             --ouro: #ffcc00;
             --fundo: #f4f4f4;
             --branco: #ffffff;
@@ -16,131 +17,104 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
         body { background-color: var(--fundo); color: var(--texto); line-height: 1.6; }
 
+        /* HEADER E MENU */
         header {
             background-color: var(--azul);
             color: var(--branco);
-            padding: 2.5rem 1rem;
+            padding: 2.5rem 1rem 0 1rem;
             text-align: center;
             border-bottom: 5px solid var(--ouro);
+            position: relative;
+            z-index: 2000;
         }
 
-        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-
-        h2.secao-titulo { 
-            color: var(--azul); 
-            margin: 2rem 0 1rem; 
-            border-left: 5px solid var(--ouro); 
-            padding-left: 10px;
+        .menu-bar { margin-top: 2rem; background-color: rgba(0, 0, 0, 0.1); display: flex; justify-content: center; }
+        .menu-bar ul { list-style: none; display: flex; padding: 0; }
+        .dropdown { position: relative; }
+        .dropdown > a {
+            color: var(--branco); text-decoration: none; padding: 1rem 2rem;
+            display: block; font-weight: bold; text-transform: uppercase; font-size: 0.9rem;
         }
 
+        /* MEGA MENU DEPARTAMENTOS */
+        .dropdown-content {
+            display: none; position: absolute; left: 50%; transform: translateX(-50%);
+            background-color: var(--branco); width: 850px; box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+            padding: 20px; border-radius: 0 0 12px 12px; border-top: 4px solid var(--ouro);
+            grid-template-columns: repeat(3, 1fr); gap: 5px 15px;
+        }
+        .dropdown:hover .dropdown-content { display: grid; }
+        .dropdown-content a {
+            color: var(--texto); text-decoration: none; font-size: 0.8rem; padding: 5px;
+            border-radius: 4px; transition: 0.2s; text-align: left;
+        }
+        .dropdown-content a:hover { background-color: #f0f7f8; color: var(--azul); padding-left: 10px; }
+
+        /* CONTEÚDO PRINCIPAL */
+        .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+        h2.secao-titulo { color: var(--azul); margin: 2.5rem 0 1.5rem; border-left: 6px solid var(--ouro); padding-left: 12px; }
+
+        /* MOTOR DO CARROSSEL */
         .carrossel-container {
-            display: flex;
-            overflow-x: hidden;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            border-radius: 10px;
-            background: #fff;
-            width: 100%;
+            display: flex; overflow-x: hidden; scroll-snap-type: x mandatory;
+            scroll-behavior: smooth; border-radius: 10px; background: #fff; width: 100%;
         }
+        .carrossel-item { flex: 0 0 100%; scroll-snap-align: center; display: flex; justify-content: center; align-items: center; height: 300px; }
+        .foto-carrossel { width: 100%; height: 100%; object-fit: contain; padding: 10px; }
 
-        .carrossel-item {
-            flex: 0 0 100%;
-            scroll-snap-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .foto-carrossel, .video-carrossel {
-            width: 100%;
-            max-height: 350px;
-            object-fit: contain;
-            padding: 10px;
-        }
-
+        /* CARD DESTAQUE COM BADGE */
         .card-destaque {
-            background: var(--branco);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border: 2px solid var(--ouro);
-            margin-bottom: 2rem;
+            background: var(--branco); border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); border: 2px solid var(--ouro); margin-bottom: 3rem;
+            position: relative;
         }
-
         .badge-veredito {
-            background: var(--ouro);
-            color: #000;
-            font-weight: bold;
-            padding: 8px 20px;
-            display: inline-block;
-            font-size: 0.8rem;
-            text-transform: uppercase;
+            background: var(--ouro); color: #000; font-weight: bold; padding: 8px 20px;
+            display: inline-block; font-size: 0.75rem; text-transform: uppercase;
+            position: absolute; top: 0; left: 0; border-bottom-right-radius: 15px; z-index: 10;
         }
+        .destaque-flex { display: flex; flex-wrap: wrap; padding: 35px 25px 25px 25px; gap: 25px; align-items: center; }
+        .info-destaque { flex: 1.2; min-width: 300px; }
+        .nome-destaque { font-size: 1.6rem; font-weight: bold; color: var(--azul); margin-bottom: 15px; text-align: center; }
+        .veredito-box { background: #fff9e6; border-left: 5px solid var(--ouro); padding: 15px; font-style: italic; margin-bottom: 20px; border-radius: 4px; }
 
-        .destaque-flex { display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; align-items: center; }
-        .info-destaque { flex: 1.2; min-width: 280px; }
-        .nome-destaque { font-size: 1.5rem; font-weight: bold; color: var(--azul); margin-bottom: 15px; }
-
-        .veredito-box {
-            background: #fff9e6;
-            border-left: 5px solid var(--ouro);
-            padding: 15px;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
+        /* GRADE DE ACHADINHOS */
         .grid-achadinhos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; 
+            margin-bottom: 4rem;
         }
 
         .card-achadinho {
-            background: var(--branco);
-            border-radius: 12px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            border: 1px solid #eee;
-        }
-
-        .card-achadinho:hover { transform: translateY(-5px); }
-
-        .card-achadinho .carrossel-container {
-            height: 220px;
-            margin-bottom: 10px;
-        }
-
-        .nome-achadinho { font-size: 0.95rem; font-weight: bold; color: var(--azul); margin-bottom: 15px; height: 45px; overflow: hidden; }
-
-        .btn {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
+            background: var(--branco); border-radius: 15px; padding: 20px;
+            text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #eee;
+            display: flex; flex-direction: column; justify-content: space-between;
             transition: 0.3s;
         }
+        .card-achadinho:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .card-achadinho .carrossel-container { height: 240px; margin-bottom: 15px; border: 1px solid #f9f9f9; }
+        .nome-achadinho { font-size: 1rem; font-weight: bold; color: var(--azul); margin-bottom: 20px; height: 50px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 
-        .btn-principal { background: var(--azul); color: white; padding: 15px; font-size: 1.1rem; }
-        .btn-principal:hover { background: #00454d; }
-
-        .btn-secundario { background: transparent; color: var(--azul); border: 2px solid var(--azul); padding: 10px; font-size: 0.9rem; }
+        /* BOTÕES */
+        .btn { display: block; text-align: center; text-decoration: none; font-weight: bold; border-radius: 10px; padding: 14px; transition: 0.3s; }
+        .btn-principal { background: var(--azul); color: white; font-size: 1.1rem; }
+        .btn-principal:hover { background: var(--azul-escuro); }
+        .btn-secundario { background: transparent; color: var(--azul); border: 2px solid var(--azul); font-size: 0.9rem; }
         .btn-secundario:hover { background: var(--azul); color: white; }
 
+        /* WHATSAPP */
         .whatsapp-float {
-            position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white;
-            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            text-decoration: none; z-index: 1000;
+            position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white;
+            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 35px; z-index: 3000; text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        footer { text-align: center; padding: 3rem; color: #888; font-size: 0.8rem; }
+        footer { text-align: center; padding: 4rem 1rem; color: #888; font-size: 0.85rem; border-top: 1px solid #eee; }
 
-        @media (max-width: 600px) {
-            .destaque-flex { flex-direction: column; }
-        }
+        @media (max-width: 900px) { .dropdown-content { width: 95vw; grid-template-columns: repeat(2, 1fr); max-height: 450px; overflow-y: auto; } }
+        @media (max-width: 600px) { .destaque-flex { flex-direction: column; } .dropdown-content { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -148,6 +122,30 @@
     <header>
         <h1>FACILITA LAR</h1>
         <p>Consultoria Magalu</p>
+        <nav class="menu-bar">
+            <ul>
+                <li class="dropdown">
+                    <a href="#">Departamentos ▼</a>
+                    <div class="dropdown-content">
+                        <a href="ar-ventilacao.html">Ar e Ventilação</a><a href="artesanato.html">Artesanato</a><a href="artigos-festa.html">Artigos para Festa</a>
+                        <a href="audio.html">Áudio</a><a href="automotivo.html">Automotivo</a><a href="bebes.html">Bebês</a>
+                        <a href="beleza.html">Beleza & Perfumaria</a><a href="sexual.html">Bem-Estar Sexual</a><a href="brinquedos.html">Brinquedos</a>
+                        <a href="cama.html">Cama, Mesa e Banho</a><a href="cameras.html">Câmeras e Drones</a><a href="casa.html">Casa e Construção</a>
+                        <a href="smart.html">Casa Inteligente</a><a href="celulares.html">Celulares</a><a href="colchoes.html">Colchões</a>
+                        <a href="comercio.html">Comércio e Indústria</a><a href="decoracao.html">Decoração</a><a href="eletrodomesticos.html">Eletrodomésticos</a>
+                        <a href="eletroportateis.html">Eletroportáteis</a><a href="esporte.html">Esporte e Lazer</a><a href="ferramentas.html">Ferramentas</a>
+                        <a href="filmes.html">Filmes e Séries</a><a href="jardim.html">Flores e Jardim</a><a href="games.html">Games</a>
+                        <a href="informatica.html">Informática</a><a href="instrumentos.html">Instrumentos Musicais</a><a href="livros.html">Livros</a>
+                        <a href="mercado.html">Mercado</a><a href="moda.html">Moda</a><a href="moveis.html">Móveis</a>
+                        <a href="musica.html">Música e Shows</a><a href="natal.html">Natal</a><a href="papelaria.html">Papelaria</a>
+                        <a href="pet.html">Pet Shop</a><a href="religiao.html">Religião</a><a href="relogios.html">Relógios</a>
+                        <a href="saude.html">Saúde</a><a href="servicos.html">Serviços</a><a href="suplementos.html">Suplementos</a>
+                        <a href="tablets.html">Tablets</a><a href="telefonia.html">Telefonia Fixa</a><a href="tv.html">TV e Vídeo</a>
+                        <a href="utilidades.html">Utilidades Domésticas</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
@@ -182,7 +180,7 @@
                 </div>
         </div>
 
-        <h2 class="secao-titulo">📦 Giro Rápido</h2>
+                <h2 class="secao-titulo">📦 Giro Rápido</h2>
         
         <div class="grid-achadinhos">
             
@@ -258,25 +256,21 @@
 
     <a href="https://wa.me/5511950640669" class="whatsapp-float" target="_blank">💬</a>
 
-    <footer>
-        <p>&copy; 2026 Facilita Lar - Parceiro Magalu</p>
-    </footer>
+    <footer><p>&copy; 2026 Facilita Lar - Parceiro Magalu</p></footer>
 
     <script>
         const carrosseis = document.querySelectorAll('.motor-carrossel');
         carrosseis.forEach((container) => {
             let index = 0;
             const itens = container.querySelectorAll('.carrossel-item');
-            const total = itens.length;
-            function mover() {
-                index++;
-                if (index >= total) index = 0;
-                container.scrollTo({ left: container.offsetWidth * index, behavior: 'smooth' });
+            if (itens.length > 1) {
+                setInterval(() => {
+                    index = (index + 1) % itens.length;
+                    container.scrollTo({ left: container.offsetWidth * index, behavior: 'smooth' });
+                }, 4000);
             }
-            setInterval(mover, 3500);
             window.addEventListener('resize', () => { container.scrollTo({ left: container.offsetWidth * index }); });
         });
     </script>
 </body>
 </html>
-
