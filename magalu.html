@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facilita Lar - Curadoria Magalu</title>
     <style>
-        /* =============================================
-           CONFIGURAÇÕES GERAIS (MANTIDAS)
-           ============================================= */
         :root {
             --azul: #005a63;
             --ouro: #ffcc00;
@@ -36,9 +33,6 @@
             padding-left: 10px;
         }
 
-        /* =============================================
-           ESTILO DO CARROSSEL (Geral para Veredito e Achadinhos)
-           ============================================= */
         .carrossel-container {
             display: flex;
             overflow-x: hidden;
@@ -64,9 +58,6 @@
             padding: 10px;
         }
 
-        /* =============================================
-           TEMPLATE A: O VEREDITO
-           ============================================= */
         .card-destaque {
             background: var(--branco);
             border-radius: 15px;
@@ -98,9 +89,6 @@
             margin-bottom: 20px;
         }
 
-        /* =============================================
-           TEMPLATE B: ACHADINHOS (CARROSSEL INTERNO)
-           ============================================= */
         .grid-achadinhos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -119,7 +107,6 @@
 
         .card-achadinho:hover { transform: translateY(-5px); }
 
-        /* Ajuste do carrossel dentro do achadinho */
         .card-achadinho .carrossel-container {
             height: 220px;
             margin-bottom: 10px;
@@ -127,9 +114,6 @@
 
         .nome-achadinho { font-size: 0.95rem; font-weight: bold; color: var(--azul); margin-bottom: 15px; height: 45px; overflow: hidden; }
 
-        /* =============================================
-           BOTÕES E COMPLEMENTOS
-           ============================================= */
         .btn {
             display: block;
             text-align: center;
@@ -173,14 +157,9 @@
         <div class="card-destaque">
             <div class="badge-veredito">Destaque de Qualidade</div>
             <div class="destaque-flex">
-                
                 <div class="carrossel-container motor-carrossel">
-                    <div class="carrossel-item">
-                        <img src="imagens/potes-1.jpg" alt="Pote 1" class="foto-carrossel">
-                    </div>
-                    <div class="carrossel-item">
-                        <img src="imagens/potes-2.jpg" alt="Pote 2" class="foto-carrossel">
-                    </div>
+                    <div class="carrossel-item"><img src="imagens/potes-1.jpg" class="foto-carrossel"></div>
+                    <div class="carrossel-item"><img src="imagens/potes-2.jpg" class="foto-carrossel"></div>
                     <div class="carrossel-item">
                         <video class="video-carrossel" autoplay muted loop playsinline>
                             <source src="imagens/video-potes.mp4" type="video/mp4">
@@ -192,9 +171,9 @@
                     <div class="nome-destaque">Os Mais Vendidos da Semana!</div>
                     <div class="veredito-box">
                         <strong>🏆 Por que é o Top Vendas:</strong> 
-                        Estes produtos unem durabilidade com o menor preço do mercado. Nossa análise confirma: modernidade e economia para sua cozinha.
+                        Estes produtos unem durabilidade com o menor preço do mercado. Melhor escolha para modernizar sua cozinha.
                     </div>
-                    <a href="LINK_MAGALU_AQUI" target="_blank" class="btn btn-principal">Ver Oferta no Magalu</a>
+                    <a href="SEU_LINK_AQUI" target="_blank" class="btn btn-principal">Ver Oferta no Magalu</a>
                 </div>
             </div>
         </div>
@@ -205,37 +184,21 @@
             
             <div class="card-achadinho">
                 <div class="carrossel-container motor-carrossel">
-                    <div class="carrossel-item">
-                        <img src="imagens/jogo-potes.jpg" class="foto-carrossel">
-                    </div>
-                    <div class="carrossel-item">
-                        <img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\Potes D Laura.jpg" class="foto-carrossel">
-                    </div>
-                    <div class="carrossel-item">
-                        <img src="Potes D Laura1.jpg" class="foto-carrossel">
-                    </div>
-                    <div class="carrossel-item">
-                        <img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\potes d laura2.jpg" class="foto-carrossel">
-                    </div>
+                    <div class="carrossel-item"><img src="imagens/jogo-potes.jpg" class="foto-carrossel"></div>
+                    <div class="carrossel-item"><img src="imagens/potes-d-laura.jpg" class="foto-carrossel"></div>
+                    <div class="carrossel-item"><img src="imagens/potes-d-laura-2.jpg" class="foto-carrossel"></div>
                 </div>
-                <div class="nome-achadinho">Jogo 4 Potes de Vidro Hermético Marmita Tampa 4 Travas 640ml - DONA LAURA</div>
-               <a href="https://www.magazinevoce.com.br/magazineachadinhosacaj/jogo-4-potes-de-vidro-hermetico-marmita-tampa-4-travas-640ml-dona-laura/p/dd9a6ek93d/ud/poud/?seller_id=donalaurautilidadesdomesticas" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   class="btn btn-secundario">
-   Ver Preço
-</a>
+                <div class="nome-achadinho">Jogo 4 Potes de Vidro Hermético Dona Laura</div>
+                <a href="https://www.magazinevoce.com.br/magazineachadinhosacaj/..." target="_blank" rel="noopener noreferrer" class="btn btn-secundario">Ver Preço</a>
             </div>
 
             <div class="card-achadinho">
                 <div class="carrossel-container motor-carrossel">
-                    <div class="carrossel-item"><img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\processador1.jpg" class="foto-carrossel"></div>
-                    <div class="carrossel-item"><img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\processador2.jpg" class="foto-carrossel"></div>
-                    <div class="carrossel-item"><img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\processador4.jpg" class="foto-carrossel"></div>
-                    <div class="carrossel-item"><img src="C:\Users\Antonio Carlos\OneDrive\Área de Trabalho\Matriz\1.Site\4. Comercial\Afiliações\Magalu\Imagens\processador5.jpg" class="foto-carrossel"></div>
+                    <div class="carrossel-item"><img src="imagens/processador-1.jpg" class="foto-carrossel"></div>
+                    <div class="carrossel-item"><img src="imagens/processador-2.jpg" class="foto-carrossel"></div>
                 </div>
-                <div class="nome-achadinho">Mini Processador Alimentos Manual 3 Lâminas Id Utilidade</div>
-                  <a href="https://www.magazinevoce.com.br/magazineachadinhosacaj/mini-processador-alimentos-manual-3-laminas-id-utilidade/p/ga989dh70f/ud/prcm/?seller_id=loarymix" target="_blank" rel="noopener noreferrer" class="btn btn-secundario">Ver Preço</a>
+                <div class="nome-achadinho">Mini Processador Alimentos Manual 3 Lâminas</div>
+                <a href="LINK_AQUI" target="_blank" rel="noopener noreferrer" class="btn btn-secundario">Ver Preço</a>
             </div>
 
             <div class="card-achadinho">
@@ -246,7 +209,6 @@
                             <source src="imagens/airfryer-video.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <div class="carrossel-item"><img src="imagens/air-2.jpg" class="foto-carrossel"></div>
                 </div>
                 <div class="nome-achadinho">Airfryer Nell 3.2L Black</div>
                 <a href="LINK_AQUI" class="btn btn-secundario">Ver Preço</a>
@@ -262,32 +224,20 @@
     </footer>
 
     <script>
-        // Seleciona todos os carrosséis da página
         const carrosseis = document.querySelectorAll('.motor-carrossel');
-
         carrosseis.forEach((container) => {
             let index = 0;
             const itens = container.querySelectorAll('.carrossel-item');
             const total = itens.length;
-
             function mover() {
                 index++;
                 if (index >= total) index = 0;
-                
-                container.scrollTo({
-                    left: container.offsetWidth * index,
-                    behavior: 'smooth'
-                });
+                container.scrollTo({ left: container.offsetWidth * index, behavior: 'smooth' });
             }
-
-            // Inicia o intervalo individual para cada carrossel
             setInterval(mover, 3500);
-
-            // Garante que o scroll se ajuste ao redimensionar a tela
-            window.addEventListener('resize', () => {
-                container.scrollTo({ left: container.offsetWidth * index });
-            });
+            window.addEventListener('resize', () => { container.scrollTo({ left: container.offsetWidth * index }); });
         });
     </script>
 </body>
 </html>
+
